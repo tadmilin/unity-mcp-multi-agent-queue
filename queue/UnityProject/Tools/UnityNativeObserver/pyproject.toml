@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcpforunityserver"
+version = "10.3.0+samkok2"
+requires-python = ">=3.11"
+dependencies = ["httpx==0.28.1", "fastmcp==3.4.11", "mcp==1.30.0", "pydantic==2.14.1", "tomli==2.5.0", "fastapi==0.162.0", "uvicorn==0.54.0", "click==8.5.0"]
+
+[project.scripts]
+mcp-for-unity = "main:main"
+unity-mcp = "cli.main:main"
+
+[tool.setuptools]
+py-modules = ["main", "native_workflow_observer", "import_notifications", "code_fingerprint", "process_watch"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["cli*", "core*", "models*", "services*", "transport*", "utils*"]

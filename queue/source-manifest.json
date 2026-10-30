@@ -1,0 +1,1373 @@
+{
+  "upstream_commit": "aa5fc638d623f56178d50329d9ad8c541a57fe66",
+  "native_upstream_distribution": "mcpforunityserver10.3.0",
+  "scope": "Owned queue extension and maintained upstream server snapshot; no game data or runtime journals.",
+  "files": [
+    {
+      "source": "Tools/UnityEditorGate/Package/Editor/Tools/CommandRegistry.cs",
+      "target": "MCPForUnity/Editor/Tools/CommandRegistry.cs",
+      "source_sha256": "e45408024062ecaebda3742f3818f37bec08a97b47acbb3b2972b316e9ee105e",
+      "export_sha256": "557cbc1de004f9e20659663cf042be1003db946d5f10c6e38eee55769acafec0",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityEditorGate/Package/Editor/Services/Transport/TransportCommandDispatcher.cs",
+      "target": "MCPForUnity/Editor/Services/Transport/TransportCommandDispatcher.cs",
+      "source_sha256": "d2f64343c564bcb75cc8c65dc68528a86854395d3153ac5a4a2057d7be190b24",
+      "export_sha256": "2e1b910dd28fa7f6a3835c73816741a484e4d7b392189c9197a6513aae702d48",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityEditorGate/Package/Editor/Tools/EditorQueueGateway.cs",
+      "target": "MCPForUnity/Editor/Tools/EditorQueueGateway.cs",
+      "source_sha256": "4864b4855e16a7e9e4bf21aa9e63b644427accbd4016a04be9efeae7ad577765",
+      "export_sha256": "4864b4855e16a7e9e4bf21aa9e63b644427accbd4016a04be9efeae7ad577765",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityEditorGate/Package/Editor/Tools/EditorQueueGateway.cs.meta",
+      "target": "MCPForUnity/Editor/Tools/EditorQueueGateway.cs.meta",
+      "source_sha256": "16f0bc7416d5983dc11ad27f165fbc27a53b4949891f30b8cf19109df677b42d",
+      "export_sha256": "f7b310bff25ea15cc48ce0f07ecbbeb59ec0bca7286308e013d3d2aa417d2642",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityEditorGate/Package/Editor/Tools/EditorQueueState.cs",
+      "target": "MCPForUnity/Editor/Tools/EditorQueueState.cs",
+      "source_sha256": "367acca4de734b859d57f30fbf799ca53f6eb73a30e2c1e3399d5c874fcd82b3",
+      "export_sha256": "367acca4de734b859d57f30fbf799ca53f6eb73a30e2c1e3399d5c874fcd82b3",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityEditorGate/Package/Editor/Tools/EditorQueueState.cs.meta",
+      "target": "MCPForUnity/Editor/Tools/EditorQueueState.cs.meta",
+      "source_sha256": "4883b443312c1bc5ea1af0e3679ce3a39149f6df72f86cf45e25b1473fac4112",
+      "export_sha256": "e287b02b29053b9769cdf5a66fb36768e528f9c62a10b0375301b95ab2049622",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/bridge.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/bridge.py",
+      "source_sha256": "41875a843cc8431e72a0578624d80982975feb7c09e0ded857c151b4461f4b9d",
+      "export_sha256": "41875a843cc8431e72a0578624d80982975feb7c09e0ded857c151b4461f4b9d",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/call_service.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/call_service.py",
+      "source_sha256": "3dfbdd707484b81681fa83610a086330c6adcdf89c1c492897172f5f41be765d",
+      "export_sha256": "3dfbdd707484b81681fa83610a086330c6adcdf89c1c492897172f5f41be765d",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/claim_wait.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/claim_wait.py",
+      "source_sha256": "aa0df1d85ea0bb3adeb4397fa4469f21d8db33217c1da7d2b25231ca67c3d618",
+      "export_sha256": "aa0df1d85ea0bb3adeb4397fa4469f21d8db33217c1da7d2b25231ca67c3d618",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/direct_client.mjs",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/direct_client.mjs",
+      "source_sha256": "9d38744c23a6be7f0eac94c59e5749bcd216cea57858cf6c0df42b4d030c14ad",
+      "export_sha256": "9d38744c23a6be7f0eac94c59e5749bcd216cea57858cf6c0df42b4d030c14ad",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/editor_wait.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/editor_wait.py",
+      "source_sha256": "3b7c6abb4788b90a81bc7081b318e0ff255903a6fc28de5a989d23d0a7e942e1",
+      "export_sha256": "3b7c6abb4788b90a81bc7081b318e0ff255903a6fc28de5a989d23d0a7e942e1",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/import_recovery.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/import_recovery.py",
+      "source_sha256": "b20b41f420745160d7c2097b2d9828796c7d97b38e34c63a08000d7b4736c017",
+      "export_sha256": "b20b41f420745160d7c2097b2d9828796c7d97b38e34c63a08000d7b4736c017",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/import_wait.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/import_wait.py",
+      "source_sha256": "8403fba401631ca423e74542d8231e868b4d41d96fdccce454c8600548f9da3e",
+      "export_sha256": "8403fba401631ca423e74542d8231e868b4d41d96fdccce454c8600548f9da3e",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/initial_wait.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/initial_wait.py",
+      "source_sha256": "0fcc1a1bd6f0cc863038c3bb111c9e6ae661cd5dc176648460c4d735d2331450",
+      "export_sha256": "0fcc1a1bd6f0cc863038c3bb111c9e6ae661cd5dc176648460c4d735d2331450",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/job_author.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/job_author.py",
+      "source_sha256": "a8cae6473e0dc77a4a25904a50a16c63d392a5240779433258ebe24919358f3e",
+      "export_sha256": "a8cae6473e0dc77a4a25904a50a16c63d392a5240779433258ebe24919358f3e",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/job_router.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/job_router.py",
+      "source_sha256": "fd29de06da900df07107e634f466004173c3f7a143d85c62a68189865840ffa9",
+      "export_sha256": "fd29de06da900df07107e634f466004173c3f7a143d85c62a68189865840ffa9",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/phase.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/phase.py",
+      "source_sha256": "da5d83bb7bb9af68abe31d9d30603462a0eb19aa50bee57cd183048ec68fa442",
+      "export_sha256": "83f2a5cd262d018281f1a30c03018946bbab8ec09f4bdfdfabe52acc15e360f7",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/recovery.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/recovery.py",
+      "source_sha256": "d894a5d6db40f72d1c4b1506fd899dd15ee0b5f6c5c7af32a3433832f2399a83",
+      "export_sha256": "d894a5d6db40f72d1c4b1506fd899dd15ee0b5f6c5c7af32a3433832f2399a83",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/server.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/server.py",
+      "source_sha256": "0c7afba71a0108789486d5cd897fc462a51bf0854f2de970d6d598af8a64c04b",
+      "export_sha256": "a4f83b7df823a09541cb4c11a28e0ddba41c26e34da089ec7bfbdc0ee7d23dbc",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/unmarked_play_recovery.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/unmarked_play_recovery.py",
+      "source_sha256": "61bae48533d92ece62affb3ea25e9d8520be6f21e71deef7cae39f26712c9ee2",
+      "export_sha256": "898c0a6ebe8ff8cd9f22c0c4ac2b8ff73c69d597f689f2578c0643d4fc2bd5d6",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/requirements-lock.txt",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/requirements-lock.txt",
+      "source_sha256": "3741852c965b65213bfc200a818e499ef97ae77138e54a9a9889b994ff44f644",
+      "export_sha256": "bcfb1c08df202b6635e4361dfdc9166a32a0c1e13eefadc189451bf492a59816",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_bridge.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_bridge.py",
+      "source_sha256": "c05e8c63f351d702e2f34abef9f7b9b84aaa9b91144e6970efda4e79c625baee",
+      "export_sha256": "3768438bd422ee7819e37418a575008bb43cb337d83bcd28ee4b70cc66bd02e7",
+      "modified_for_export": true
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_claim_wait.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_claim_wait.py",
+      "source_sha256": "8c83983c0de7fa9c69df5ced6c982b92c992ec608266c5643b6d0d5c194cd807",
+      "export_sha256": "8c83983c0de7fa9c69df5ced6c982b92c992ec608266c5643b6d0d5c194cd807",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_client_trace.mjs",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_client_trace.mjs",
+      "source_sha256": "ba6b4af162552c8d3f5663d82d4a5e2048c6e77b872421b0829636694a2a7d39",
+      "export_sha256": "ba6b4af162552c8d3f5663d82d4a5e2048c6e77b872421b0829636694a2a7d39",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_command_failure.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_command_failure.py",
+      "source_sha256": "29107a86191953be1c5fdbe444048773452e77a8609caf9c7c964fcd65869fdd",
+      "export_sha256": "29107a86191953be1c5fdbe444048773452e77a8609caf9c7c964fcd65869fdd",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_direct_client.mjs",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_direct_client.mjs",
+      "source_sha256": "32be53fd66352df29db2a7871a37addafa1968b4a0a9c03050bc3d577bb6b467",
+      "export_sha256": "32be53fd66352df29db2a7871a37addafa1968b4a0a9c03050bc3d577bb6b467",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_durable_quarantine_wait.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_durable_quarantine_wait.py",
+      "source_sha256": "67dfb4062fa1cf56ade4404265091e415ac038665a1b1f59007b21a71a432d0f",
+      "export_sha256": "67dfb4062fa1cf56ade4404265091e415ac038665a1b1f59007b21a71a432d0f",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_editor_identity.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_editor_identity.py",
+      "source_sha256": "0e9e479d635a9d466b741ac0e8f93bd5b89c3457fba1f93e2359b8b9e3ca9c27",
+      "export_sha256": "0e9e479d635a9d466b741ac0e8f93bd5b89c3457fba1f93e2359b8b9e3ca9c27",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_editor_wait.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_editor_wait.py",
+      "source_sha256": "d186a9fbf41c914bda802a76c2ca2a2ca1cc65aa8dd723e59578aa3b84fb8d8d",
+      "export_sha256": "0c581cc086699042f68429bdcc8b85c4f73cba1b49e3401c8df6a0102651d7ce",
+      "modified_for_export": true
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_import_recovery.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_import_recovery.py",
+      "source_sha256": "ddafac2b88c2d7d52b4ae5093a58a359396ee5a38d86e0e5b012aed77933ae7d",
+      "export_sha256": "ddafac2b88c2d7d52b4ae5093a58a359396ee5a38d86e0e5b012aed77933ae7d",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_import_wait.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_import_wait.py",
+      "source_sha256": "f587e17a958bc9ff7a8c3ec18a19ad38dcdee951b46985c3ce7e55758350dfb1",
+      "export_sha256": "7043658b9159203b3b378979f14aa6ac4595f50038adb75093139c8df52bb8db",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_initial_wait.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_initial_wait.py",
+      "source_sha256": "f34fa7a0a9a9db1878e01b65c725013ed7f9d2d36ac0a4f48a187acda4cc964c",
+      "export_sha256": "f34fa7a0a9a9db1878e01b65c725013ed7f9d2d36ac0a4f48a187acda4cc964c",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_native_route.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_native_route.py",
+      "source_sha256": "0609fbe97115d14d01904d026e2278b50a6ed4b75e556d97dc914e8dfd5601e7",
+      "export_sha256": "ae6149bf5389dd1bf671c38b441cf2c23bb432adffafbca878cc4c67bcca58e9",
+      "modified_for_export": true
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_observe_client.mjs",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_observe_client.mjs",
+      "source_sha256": "a71bed2b7f5087f05adaa8d164637eb29e7f48d1d813bbcaa9bca3a983a4d45a",
+      "export_sha256": "a71bed2b7f5087f05adaa8d164637eb29e7f48d1d813bbcaa9bca3a983a4d45a",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_phase.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_phase.py",
+      "source_sha256": "6a125a215dfc7165ef1e3848a470df878518b7bb543206302f4c7236bb599a99",
+      "export_sha256": "090199c00433b46f5b0ea7e2f3bf8cdc76bdee6cbe3f2bfcc98e9c86da1e4ca2",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_preserved_session.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_preserved_session.py",
+      "source_sha256": "fcce2ad3ab57f768e51e32d484a023a904f767499eab8f9edfdb54a6be49c2e2",
+      "export_sha256": "fcce2ad3ab57f768e51e32d484a023a904f767499eab8f9edfdb54a6be49c2e2",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_recovery.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_recovery.py",
+      "source_sha256": "e7bed09ff8d0c74ecf01fcbf71eb1eb6126e5d7eefffce8c0c556903eb2b2287",
+      "export_sha256": "e7bed09ff8d0c74ecf01fcbf71eb1eb6126e5d7eefffce8c0c556903eb2b2287",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityWorkflowMcp/test_unmarked_play_recovery.py",
+      "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_unmarked_play_recovery.py",
+      "source_sha256": "5d35b18ff14f1786366a15edfbd87093c97786e710d6394ed486a883d18336d8",
+      "export_sha256": "373de510eabcc75cf5b3e45d20fe5e8c8bf6ed77fb427b4eddb421a87646b610",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityJobCoordinator/cli.py",
+      "target": "queue/UnityProject/Tools/UnityJobCoordinator/cli.py",
+      "source_sha256": "e49024c838744aa24fef6d97883935d50078642ff1a1c24fc18e4465b2db8701",
+      "export_sha256": "e49024c838744aa24fef6d97883935d50078642ff1a1c24fc18e4465b2db8701",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityJobCoordinator/store.py",
+      "target": "queue/UnityProject/Tools/UnityJobCoordinator/store.py",
+      "source_sha256": "5e15dcb28041013c6ff6adf26c5247bf97a178072d30495a5c665445e92fb032",
+      "export_sha256": "5e15dcb28041013c6ff6adf26c5247bf97a178072d30495a5c665445e92fb032",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityJobCoordinator/worker.py",
+      "target": "queue/UnityProject/Tools/UnityJobCoordinator/worker.py",
+      "source_sha256": "6bbfcb32bd3a13cf3df9dd3575f4101edf222bf8be3f5c73136bf5727850dd15",
+      "export_sha256": "6bbfcb32bd3a13cf3df9dd3575f4101edf222bf8be3f5c73136bf5727850dd15",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityJobCoordinator/install.py",
+      "target": "queue/UnityProject/Tools/UnityJobCoordinator/install.py",
+      "source_sha256": "a691995f602e9415d24d030e6b01926ae736771ce33f538ad3ab4502897506aa",
+      "export_sha256": "a691995f602e9415d24d030e6b01926ae736771ce33f538ad3ab4502897506aa",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityJobCoordinator/test_coordinator.py",
+      "target": "queue/UnityProject/Tools/UnityJobCoordinator/test_coordinator.py",
+      "source_sha256": "1b80b5fc4225556c8987af3bd43afb7bc8fe0112481d06e0ffd808d0f9f8d0ec",
+      "export_sha256": "1b80b5fc4225556c8987af3bd43afb7bc8fe0112481d06e0ffd808d0f9f8d0ec",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityEditorGate/gate_client.py",
+      "target": "queue/UnityProject/Tools/UnityEditorGate/gate_client.py",
+      "source_sha256": "cd0a83bb400077fc34e1ba5947be0dc1c54192a310bfd599c17e190ec599b620",
+      "export_sha256": "cd0a83bb400077fc34e1ba5947be0dc1c54192a310bfd599c17e190ec599b620",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityReloadDiagnostics/mcp_cli.py",
+      "target": "queue/UnityProject/Tools/UnityReloadDiagnostics/mcp_cli.py",
+      "source_sha256": "ffb4575e90de5ddad9989b8873d8a609000c25304d042d598fa420aa572ed5d5",
+      "export_sha256": "ffb4575e90de5ddad9989b8873d8a609000c25304d042d598fa420aa572ed5d5",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityReloadDiagnostics/observe_reconnect.py",
+      "target": "queue/UnityProject/Tools/UnityReloadDiagnostics/observe_reconnect.py",
+      "source_sha256": "444170c054ad83263618864d6ac50cc5b69cfa94aa06375ebb4051de448e7bb2",
+      "export_sha256": "444170c054ad83263618864d6ac50cc5b69cfa94aa06375ebb4051de448e7bb2",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/code_fingerprint.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/code_fingerprint.py",
+      "source_sha256": "7d89b9fcb44bb6ab33e56751120f909a1bb9c3994d4aad74c9ce49f18bb255d8",
+      "export_sha256": "7d89b9fcb44bb6ab33e56751120f909a1bb9c3994d4aad74c9ce49f18bb255d8",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/import_notifications.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/import_notifications.py",
+      "source_sha256": "533ffd15071b5c32c46b29ad4c0e5d8ba87dbfcb6c1e58c2fe277e8874a14f39",
+      "export_sha256": "6b9590c79d5d17fe2b09094ae844b97f6482cbdc62149026a16356e64b5fc40e",
+      "modified_for_export": true
+    },
+    {
+      "source": "Tools/UnityNativeObserver/main.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/main.py",
+      "source_sha256": "b8ab24ea1c386e231c874debdc94110e201e734c2741a69b6dd0fbb81d78e833",
+      "export_sha256": "b8ab24ea1c386e231c874debdc94110e201e734c2741a69b6dd0fbb81d78e833",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/native_workflow_observer.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/native_workflow_observer.py",
+      "source_sha256": "23655dc385fae04c29d96974261f39b434755910273808b49a023659061a36ee",
+      "export_sha256": "5481508c13e3b78456ac32538fe4375b26d2ba03411800da20aaff9dde6dac3b",
+      "modified_for_export": true
+    },
+    {
+      "source": "Tools/UnityNativeObserver/process_watch.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/process_watch.py",
+      "source_sha256": "d9948a2d24bc7514c022b7130cf1bdb7118073dd0380ee9e99600f06f4e5d4d7",
+      "export_sha256": "d9948a2d24bc7514c022b7130cf1bdb7118073dd0380ee9e99600f06f4e5d4d7",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/test_code_fingerprint.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/test_code_fingerprint.py",
+      "source_sha256": "a4fd387b67eee444e1605ccaa60b08edeb3cc0e8aa1a985c53e13d712cca6ba6",
+      "export_sha256": "a4fd387b67eee444e1605ccaa60b08edeb3cc0e8aa1a985c53e13d712cca6ba6",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/test_native_workflow_observer.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/test_native_workflow_observer.py",
+      "source_sha256": "a68b093054b08710f8f75359a39d007d679de3273e3c07ecadf84f0a53b0bf44",
+      "export_sha256": "29a04f107f93cbf67830a6a1b670ce25dcc127770d27580726dc23fd4c565be7",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/test_process_watch.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/test_process_watch.py",
+      "source_sha256": "914d095c4d5bd81aa7fdf3c09c7180ea9a5db1ae91c5cf13183309effdc22ddf",
+      "export_sha256": "914d095c4d5bd81aa7fdf3c09c7180ea9a5db1ae91c5cf13183309effdc22ddf",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/main.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/main.py",
+      "source_sha256": "269462cc3a9a0ed68874d460b9fd84cd879b339254be80a7f9bf95a5233b38fb",
+      "export_sha256": "269462cc3a9a0ed68874d460b9fd84cd879b339254be80a7f9bf95a5233b38fb",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/__init__.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/__init__.py",
+      "source_sha256": "7f61e35ea47d77c52189baeedb5d6df473e976b6ffd6f7430b6bff37017f7aa0",
+      "export_sha256": "7f61e35ea47d77c52189baeedb5d6df473e976b6ffd6f7430b6bff37017f7aa0",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/core/config.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/core/config.py",
+      "source_sha256": "289bc5e442695c02d2680491f880b5fdb04bb651af27b7304bf7246dee0419fa",
+      "export_sha256": "289bc5e442695c02d2680491f880b5fdb04bb651af27b7304bf7246dee0419fa",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/core/constants.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/core/constants.py",
+      "source_sha256": "3e166cf76e8d89eeccba2823bb5c64541ca755a524b5994ff6524c1e0bb8feda",
+      "export_sha256": "3e166cf76e8d89eeccba2823bb5c64541ca755a524b5994ff6524c1e0bb8feda",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/core/logging_decorator.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/core/logging_decorator.py",
+      "source_sha256": "0fd083eeb16f433f8c046f86e229e2cd08f422fafa75f73d441993af0eeaf262",
+      "export_sha256": "0fd083eeb16f433f8c046f86e229e2cd08f422fafa75f73d441993af0eeaf262",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/core/telemetry.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/core/telemetry.py",
+      "source_sha256": "cc88e640a50d5b44bcdb64929645f28e3088b97d19a524da64fe29014d2b0a3c",
+      "export_sha256": "cc88e640a50d5b44bcdb64929645f28e3088b97d19a524da64fe29014d2b0a3c",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/core/telemetry_decorator.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/core/telemetry_decorator.py",
+      "source_sha256": "c9c493af354d08340749dfb198858ea557ca15444fc698997bf5e43900060c0a",
+      "export_sha256": "c9c493af354d08340749dfb198858ea557ca15444fc698997bf5e43900060c0a",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/core/__init__.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/core/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "export_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/models/models.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/models/models.py",
+      "source_sha256": "4126c57392248bfa89a900705b75b3287b66af6810199d7b86784703bc845341",
+      "export_sha256": "4126c57392248bfa89a900705b75b3287b66af6810199d7b86784703bc845341",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/models/unity_response.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/models/unity_response.py",
+      "source_sha256": "c6f809849de94bcf804d0867539a308a380ee35e35516e7d7f97509b5a2155ec",
+      "export_sha256": "c6f809849de94bcf804d0867539a308a380ee35e35516e7d7f97509b5a2155ec",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/models/__init__.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/models/__init__.py",
+      "source_sha256": "276a33ada23968392a2dbe772af5e34c3696821ff1545c695ab71131e90ec0f9",
+      "export_sha256": "276a33ada23968392a2dbe772af5e34c3696821ff1545c695ab71131e90ec0f9",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/api_key_service.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/api_key_service.py",
+      "source_sha256": "997ac80cd389e856bf13ed5f308b53abec99efba20ee804b68fddb7be4209958",
+      "export_sha256": "997ac80cd389e856bf13ed5f308b53abec99efba20ee804b68fddb7be4209958",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/custom_tool_service.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/custom_tool_service.py",
+      "source_sha256": "9b7c6f438229b0c4e15c8375777f7cc71f7e0be891be40498bcc0ffb55d4667d",
+      "export_sha256": "9b7c6f438229b0c4e15c8375777f7cc71f7e0be891be40498bcc0ffb55d4667d",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/__init__.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "export_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/transport/blender_timeout.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/transport/blender_timeout.py",
+      "source_sha256": "94ac09b968866def769bcc870a2721a1fcf7d7b1e168dc6a05ce66776f67184f",
+      "export_sha256": "94ac09b968866def769bcc870a2721a1fcf7d7b1e168dc6a05ce66776f67184f",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/transport/models.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/transport/models.py",
+      "source_sha256": "d57169c4718cf66cf170a5372c11ac7a3a91793f0388211dd8bb379046bfd2de",
+      "export_sha256": "d57169c4718cf66cf170a5372c11ac7a3a91793f0388211dd8bb379046bfd2de",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/transport/plugin_hub.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/transport/plugin_hub.py",
+      "source_sha256": "d6a2a827cc80a08a3211fff3bd37879841a284855b263a08e8123799b91319e3",
+      "export_sha256": "d6a2a827cc80a08a3211fff3bd37879841a284855b263a08e8123799b91319e3",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/transport/plugin_registry.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/transport/plugin_registry.py",
+      "source_sha256": "6dcfa6b794a28ce29dde27508a4d099b816a7cafb18a3f50277764070d6cc3ab",
+      "export_sha256": "6dcfa6b794a28ce29dde27508a4d099b816a7cafb18a3f50277764070d6cc3ab",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/transport/unity_instance_middleware.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/transport/unity_instance_middleware.py",
+      "source_sha256": "1a5655eee64cb90bede93f852612ae0e5093a91a6ccb1fa021034b09b9cd7112",
+      "export_sha256": "1a5655eee64cb90bede93f852612ae0e5093a91a6ccb1fa021034b09b9cd7112",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/transport/unity_transport.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/transport/unity_transport.py",
+      "source_sha256": "5b826d4499e8450419d0647aafbe4ad5215c202eed74bb22c36f24f34cf4a7f8",
+      "export_sha256": "5b826d4499e8450419d0647aafbe4ad5215c202eed74bb22c36f24f34cf4a7f8",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/transport/__init__.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/transport/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "export_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/utils/focus_nudge.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/utils/focus_nudge.py",
+      "source_sha256": "57e5bb6cfdf72cf5972d5c53924bca465fa4bffd9f1eb9bdb46a01b6e5f51d4a",
+      "export_sha256": "57e5bb6cfdf72cf5972d5c53924bca465fa4bffd9f1eb9bdb46a01b6e5f51d4a",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/utils/log_paths.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/utils/log_paths.py",
+      "source_sha256": "12f7b0b229ad6755430a7f5a6e333032dd37c1b2518a6c210d9b55cc124ede5f",
+      "export_sha256": "12f7b0b229ad6755430a7f5a6e333032dd37c1b2518a6c210d9b55cc124ede5f",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/utils/module_discovery.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/utils/module_discovery.py",
+      "source_sha256": "332e3ca1f075054ab1881a0064019b11a2d061db2b0e1326f0c6b204ffdb5124",
+      "export_sha256": "332e3ca1f075054ab1881a0064019b11a2d061db2b0e1326f0c6b204ffdb5124",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/transport/legacy/port_discovery.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/transport/legacy/port_discovery.py",
+      "source_sha256": "06d7e5bd7808b3c9abe9afb47c5c6dd0f0f51a9208a087a085fa39fcff5fac00",
+      "export_sha256": "06d7e5bd7808b3c9abe9afb47c5c6dd0f0f51a9208a087a085fa39fcff5fac00",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/transport/legacy/stdio_port_registry.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/transport/legacy/stdio_port_registry.py",
+      "source_sha256": "8f888046e3fac1eb69a4d0c6f2a29ebafa356c929c4a5804859bd2ca5fee7f40",
+      "export_sha256": "8f888046e3fac1eb69a4d0c6f2a29ebafa356c929c4a5804859bd2ca5fee7f40",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/transport/legacy/unity_connection.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/transport/legacy/unity_connection.py",
+      "source_sha256": "8bdc1a3f028e871865c1f61b380f442b6114a50bb105a884b0e63851d5bc5f4b",
+      "export_sha256": "8bdc1a3f028e871865c1f61b380f442b6114a50bb105a884b0e63851d5bc5f4b",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/registry/resource_registry.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/registry/resource_registry.py",
+      "source_sha256": "4ff2b39ea82fb7990a815ee653ce676f42e516e078ae0f939b80a3871b7e21c2",
+      "export_sha256": "4ff2b39ea82fb7990a815ee653ce676f42e516e078ae0f939b80a3871b7e21c2",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/registry/tool_registry.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/registry/tool_registry.py",
+      "source_sha256": "d8ab45814128f78bac138132c7754a9d62b777b2b399c9050ca1bef5798b7231",
+      "export_sha256": "d8ab45814128f78bac138132c7754a9d62b777b2b399c9050ca1bef5798b7231",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/registry/__init__.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/registry/__init__.py",
+      "source_sha256": "bb64f25e7996967ef4101b398fe6f169d1e796abdbe74eeb4593836dc763228f",
+      "export_sha256": "bb64f25e7996967ef4101b398fe6f169d1e796abdbe74eeb4593836dc763228f",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/active_tool.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/active_tool.py",
+      "source_sha256": "8479ac00a9272c647dd645dea0c54ad4a4a7bfdcec534e58a8375c4134c3d371",
+      "export_sha256": "8479ac00a9272c647dd645dea0c54ad4a4a7bfdcec534e58a8375c4134c3d371",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/cameras.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/cameras.py",
+      "source_sha256": "5605d5f3f30aae6a69ce6573f36e9441c6e2d0188a8fd4af4ec19ac5a719f12a",
+      "export_sha256": "5605d5f3f30aae6a69ce6573f36e9441c6e2d0188a8fd4af4ec19ac5a719f12a",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/custom_tools.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/custom_tools.py",
+      "source_sha256": "e8f0064332a5d27af8d1aa736dd11c7d0646003e0265d9c4e8e739d5aced8b33",
+      "export_sha256": "e8f0064332a5d27af8d1aa736dd11c7d0646003e0265d9c4e8e739d5aced8b33",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/editor_state.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/editor_state.py",
+      "source_sha256": "0c2451ff7fbfd8e8e0a88ca4190c656c3b98f65fb450fc94d1e33be83e128992",
+      "export_sha256": "0c2451ff7fbfd8e8e0a88ca4190c656c3b98f65fb450fc94d1e33be83e128992",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/gameobject.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/gameobject.py",
+      "source_sha256": "58796215858c7aec555ca40150fa93fbc699a9888ade68387f2859da74b22958",
+      "export_sha256": "58796215858c7aec555ca40150fa93fbc699a9888ade68387f2859da74b22958",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/layers.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/layers.py",
+      "source_sha256": "f096e90a869bbbfcf4f3379b1ecc66e158d284b93a1756b47b57ef24f0397185",
+      "export_sha256": "f096e90a869bbbfcf4f3379b1ecc66e158d284b93a1756b47b57ef24f0397185",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/menu_items.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/menu_items.py",
+      "source_sha256": "36e6f8bc14ec1bb391e6015c26d1b9846344877d324ae78c6f43a87ffdf566e8",
+      "export_sha256": "36e6f8bc14ec1bb391e6015c26d1b9846344877d324ae78c6f43a87ffdf566e8",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/prefab.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/prefab.py",
+      "source_sha256": "c633270ae337d47ec7410d313e379c0750e7f53404608e954c2bcc5d80a2d4c3",
+      "export_sha256": "c633270ae337d47ec7410d313e379c0750e7f53404608e954c2bcc5d80a2d4c3",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/prefab_stage.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/prefab_stage.py",
+      "source_sha256": "c081429cbda091d1981f46a75a579b33baeef474c5b19f7068e918b5497f60cc",
+      "export_sha256": "c081429cbda091d1981f46a75a579b33baeef474c5b19f7068e918b5497f60cc",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/project_info.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/project_info.py",
+      "source_sha256": "c2a1ba9c0fceaedb72d31dd147497858db7129949238624973848052b2ad4d0e",
+      "export_sha256": "c2a1ba9c0fceaedb72d31dd147497858db7129949238624973848052b2ad4d0e",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/renderer_features.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/renderer_features.py",
+      "source_sha256": "96f250c2e2c92dc1a493244b4059e161eb288e624cdfaae4791f12bbb42fe25a",
+      "export_sha256": "96f250c2e2c92dc1a493244b4059e161eb288e624cdfaae4791f12bbb42fe25a",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/rendering_stats.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/rendering_stats.py",
+      "source_sha256": "7ace63d238eeb454191e44bc10d2364df3c155875975991dc56c9694a3a6d167",
+      "export_sha256": "7ace63d238eeb454191e44bc10d2364df3c155875975991dc56c9694a3a6d167",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/selection.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/selection.py",
+      "source_sha256": "ce4004e5fb6cc0f13caa5eba42c93f1bfafc28592c2bbc3272dbea19a036b326",
+      "export_sha256": "ce4004e5fb6cc0f13caa5eba42c93f1bfafc28592c2bbc3272dbea19a036b326",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/tags.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/tags.py",
+      "source_sha256": "e3924e6c78302100b65c0fc378b19cfd4f4624143a0aca039a799845e7dc4ae8",
+      "export_sha256": "e3924e6c78302100b65c0fc378b19cfd4f4624143a0aca039a799845e7dc4ae8",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/tests.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/tests.py",
+      "source_sha256": "290e2050f302f8c63c5554fe7fa28571a26d39ece422b2c67459f08a24e5b4e6",
+      "export_sha256": "290e2050f302f8c63c5554fe7fa28571a26d39ece422b2c67459f08a24e5b4e6",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/tool_groups.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/tool_groups.py",
+      "source_sha256": "c199eff15f5cc60d3db3b14b8d0f11a4367e1feb06bf1c752b6c10ee3144e20f",
+      "export_sha256": "c199eff15f5cc60d3db3b14b8d0f11a4367e1feb06bf1c752b6c10ee3144e20f",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/unity_instances.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/unity_instances.py",
+      "source_sha256": "0c5d5e446a0415c4eea16295861b1c4c063038c958f5613f8f9859193d7a77fe",
+      "export_sha256": "0c5d5e446a0415c4eea16295861b1c4c063038c958f5613f8f9859193d7a77fe",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/volumes.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/volumes.py",
+      "source_sha256": "f61d2513f1557057a6d673227b617b129c864e1693356d06daa55495aa1521c5",
+      "export_sha256": "f61d2513f1557057a6d673227b617b129c864e1693356d06daa55495aa1521c5",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/windows.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/windows.py",
+      "source_sha256": "81dc18dd802190e94a56eaf85414821a9b12bdd5d230f2edcbb1f6223374b327",
+      "export_sha256": "81dc18dd802190e94a56eaf85414821a9b12bdd5d230f2edcbb1f6223374b327",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/resources/__init__.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/resources/__init__.py",
+      "source_sha256": "8a78846d8c7ec48b14ef656e83fd7b64539f6f07a9fe1b53ddfd91a7a25f2310",
+      "export_sha256": "8a78846d8c7ec48b14ef656e83fd7b64539f6f07a9fe1b53ddfd91a7a25f2310",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/state/external_changes_scanner.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/state/external_changes_scanner.py",
+      "source_sha256": "6625eef1970ae41fa1bfb09a24b9a71086bd271ce0381a5d9abb110d8d9e2b92",
+      "export_sha256": "6625eef1970ae41fa1bfb09a24b9a71086bd271ce0381a5d9abb110d8d9e2b92",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/batch_execute.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/batch_execute.py",
+      "source_sha256": "c2253e3f0d96d27dc717880c2f010a2206d17ebe7d14d268eaf598a6d9ed923f",
+      "export_sha256": "c2253e3f0d96d27dc717880c2f010a2206d17ebe7d14d268eaf598a6d9ed923f",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/blender_bridge.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/blender_bridge.py",
+      "source_sha256": "8eb9fb3ae89b5d091b26d66fbbd8ae7f3f32676dc6dd170a04d1158fdbe99db8",
+      "export_sha256": "8eb9fb3ae89b5d091b26d66fbbd8ae7f3f32676dc6dd170a04d1158fdbe99db8",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/debug_request_context.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/debug_request_context.py",
+      "source_sha256": "ac59a75f5519d741c85fc88c48aa09bbea6047938a37aab5ad14422fadac5b94",
+      "export_sha256": "ac59a75f5519d741c85fc88c48aa09bbea6047938a37aab5ad14422fadac5b94",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/execute_code.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/execute_code.py",
+      "source_sha256": "47469b1802336fad12cd2c0fa707ed251ef1be782b4939139c7976ee87a9afce",
+      "export_sha256": "47469b1802336fad12cd2c0fa707ed251ef1be782b4939139c7976ee87a9afce",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/execute_custom_tool.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/execute_custom_tool.py",
+      "source_sha256": "e9b66f7e71c358ce6724bd687eb257863582a743696f750ce6e268acb7f58a43",
+      "export_sha256": "e9b66f7e71c358ce6724bd687eb257863582a743696f750ce6e268acb7f58a43",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/execute_menu_item.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/execute_menu_item.py",
+      "source_sha256": "c3f2ab816d4070ae20d6fa5600cc18ef3df6990563f711643f227692e0cee1c1",
+      "export_sha256": "c3f2ab816d4070ae20d6fa5600cc18ef3df6990563f711643f227692e0cee1c1",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/find_gameobjects.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/find_gameobjects.py",
+      "source_sha256": "350c71a67302f4bce6645d19e68199666ff1f59799a727f33bf5b7befe3eb1ec",
+      "export_sha256": "350c71a67302f4bce6645d19e68199666ff1f59799a727f33bf5b7befe3eb1ec",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/find_in_file.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/find_in_file.py",
+      "source_sha256": "c0d602b3dc7107b77a17d2fc1d98a74db58dfc11e6e9d6af14d380ad559edac7",
+      "export_sha256": "c0d602b3dc7107b77a17d2fc1d98a74db58dfc11e6e9d6af14d380ad559edac7",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/generate_audio.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/generate_audio.py",
+      "source_sha256": "0cfed6e8abc6448f68bcf4d1333273b27e46404585c2dfeed4cbb565de3fe34e",
+      "export_sha256": "0cfed6e8abc6448f68bcf4d1333273b27e46404585c2dfeed4cbb565de3fe34e",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/generate_image.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/generate_image.py",
+      "source_sha256": "ca8025e3aa01e75654c76c7355415521aee658d553d0e3da5a4ef856b37fe862",
+      "export_sha256": "ca8025e3aa01e75654c76c7355415521aee658d553d0e3da5a4ef856b37fe862",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/generate_model.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/generate_model.py",
+      "source_sha256": "93f0fb2a66503501ffba311cc3100bd65606918aff0b01e8533a382ccd3f7a72",
+      "export_sha256": "93f0fb2a66503501ffba311cc3100bd65606918aff0b01e8533a382ccd3f7a72",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/import_model.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/import_model.py",
+      "source_sha256": "fae0d9b991895589564237a585e7f46303b3a5941905ab4dbece8c886423fade",
+      "export_sha256": "fae0d9b991895589564237a585e7f46303b3a5941905ab4dbece8c886423fade",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/import_model_file.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/import_model_file.py",
+      "source_sha256": "98e77308bceb30deb46a301d7b80f271c2d157619c99b33c526d9fbef59fc5d3",
+      "export_sha256": "98e77308bceb30deb46a301d7b80f271c2d157619c99b33c526d9fbef59fc5d3",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_animation.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_animation.py",
+      "source_sha256": "928be1b9d0f3365cd71abd7f509addb74a2aae5eb90a268c577adc49208515a8",
+      "export_sha256": "928be1b9d0f3365cd71abd7f509addb74a2aae5eb90a268c577adc49208515a8",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_asset.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_asset.py",
+      "source_sha256": "22ac23d2cda3e10ee50657c2a6ed480f907597a872d047bf900d143670463f70",
+      "export_sha256": "22ac23d2cda3e10ee50657c2a6ed480f907597a872d047bf900d143670463f70",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_build.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_build.py",
+      "source_sha256": "7e6c1768847ecad85d5e0322d67428d06b27707d809c42e20808272920bf6a99",
+      "export_sha256": "7e6c1768847ecad85d5e0322d67428d06b27707d809c42e20808272920bf6a99",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_camera.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_camera.py",
+      "source_sha256": "a4c2f7123ee0df800ce142882ff6e8f36536dbc49fb847917b6b6086fb5bfd14",
+      "export_sha256": "a4c2f7123ee0df800ce142882ff6e8f36536dbc49fb847917b6b6086fb5bfd14",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_components.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_components.py",
+      "source_sha256": "2cbbcbf3784d21b14235a005c01a7bf8469fe1334afdb7790363460d087194cf",
+      "export_sha256": "2cbbcbf3784d21b14235a005c01a7bf8469fe1334afdb7790363460d087194cf",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_editor.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_editor.py",
+      "source_sha256": "591b15c39dea49e2889295818ca15b3696a3cfb9ceca30e6a6e581baec87ea83",
+      "export_sha256": "591b15c39dea49e2889295818ca15b3696a3cfb9ceca30e6a6e581baec87ea83",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_gameobject.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_gameobject.py",
+      "source_sha256": "5dbb89d27246db434acc4b85acd97c6a621945f09463d5508ba4c1bfdf960e0e",
+      "export_sha256": "5dbb89d27246db434acc4b85acd97c6a621945f09463d5508ba4c1bfdf960e0e",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_graphics.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_graphics.py",
+      "source_sha256": "716b9214d59a3de3590b1f2bc2825b06e3732481dc300655db2e9fc6536387bc",
+      "export_sha256": "716b9214d59a3de3590b1f2bc2825b06e3732481dc300655db2e9fc6536387bc",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_material.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_material.py",
+      "source_sha256": "79490c8481f18290c35bfb0f514befe737f2946d0d5f158b9ac467798fba573d",
+      "export_sha256": "79490c8481f18290c35bfb0f514befe737f2946d0d5f158b9ac467798fba573d",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_packages.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_packages.py",
+      "source_sha256": "c194c5f7f0082c532118a0a01a8dc0916c66c1d0f5ad798b71d890da88e10ab4",
+      "export_sha256": "c194c5f7f0082c532118a0a01a8dc0916c66c1d0f5ad798b71d890da88e10ab4",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_physics.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_physics.py",
+      "source_sha256": "b8dcf66c70f5ccd049afdf7112118a5b3a1191b52da0642de2efc68e45cd0f0f",
+      "export_sha256": "b8dcf66c70f5ccd049afdf7112118a5b3a1191b52da0642de2efc68e45cd0f0f",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_prefabs.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_prefabs.py",
+      "source_sha256": "33ceb2729a23fa55aa4e23c374a03cf88a56693bd41d69a29091a495e5426a95",
+      "export_sha256": "33ceb2729a23fa55aa4e23c374a03cf88a56693bd41d69a29091a495e5426a95",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_probuilder.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_probuilder.py",
+      "source_sha256": "7ca9cef968eef31c94fee43007861c2d74d74f8ad4ba00ed7d92a2abf1a56935",
+      "export_sha256": "7ca9cef968eef31c94fee43007861c2d74d74f8ad4ba00ed7d92a2abf1a56935",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_profiler.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_profiler.py",
+      "source_sha256": "726310f272e49de2f53b1b548dcdec91400951ba00a33dc6883bd8cca1b05380",
+      "export_sha256": "726310f272e49de2f53b1b548dcdec91400951ba00a33dc6883bd8cca1b05380",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_scene.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_scene.py",
+      "source_sha256": "acf30bc4da2bb89d340c4d8d83b4b89f2fd8eae7ae9dbcbacd4a7b8878169755",
+      "export_sha256": "acf30bc4da2bb89d340c4d8d83b4b89f2fd8eae7ae9dbcbacd4a7b8878169755",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_script.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_script.py",
+      "source_sha256": "7405bb8204fd74cfd5906abddb9d01783a443be475437f313719dd966e497fe1",
+      "export_sha256": "7405bb8204fd74cfd5906abddb9d01783a443be475437f313719dd966e497fe1",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_scriptable_object.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_scriptable_object.py",
+      "source_sha256": "3a2322ba912968d76c2fe14146822c2702b927d5c3b7ef8620e7a9ce18e09c32",
+      "export_sha256": "3a2322ba912968d76c2fe14146822c2702b927d5c3b7ef8620e7a9ce18e09c32",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_shader.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_shader.py",
+      "source_sha256": "22319b638913fc0b0e055d0b642ec73f8e0836ea7c78cca0b414b2296d40ab39",
+      "export_sha256": "22319b638913fc0b0e055d0b642ec73f8e0836ea7c78cca0b414b2296d40ab39",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_texture.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_texture.py",
+      "source_sha256": "a159c2d0885e6596c03dcedd50d6770459fcf8ab2f6f3e91794efc867a47e5d6",
+      "export_sha256": "a159c2d0885e6596c03dcedd50d6770459fcf8ab2f6f3e91794efc867a47e5d6",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_tools.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_tools.py",
+      "source_sha256": "f478e6a47be344439b321c87de9afde224c63d83c0f3b8a0bd9169b36a58f871",
+      "export_sha256": "f478e6a47be344439b321c87de9afde224c63d83c0f3b8a0bd9169b36a58f871",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_ui.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_ui.py",
+      "source_sha256": "f2a34f2a447a9d8dcceea52d80f8d8b41473553f4976dae1659b8c21a568d479",
+      "export_sha256": "f2a34f2a447a9d8dcceea52d80f8d8b41473553f4976dae1659b8c21a568d479",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/manage_vfx.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/manage_vfx.py",
+      "source_sha256": "557927130d7875265db7bf6b9d54cee17596704c97ada4742e457e498913fc67",
+      "export_sha256": "557927130d7875265db7bf6b9d54cee17596704c97ada4742e457e498913fc67",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/preflight.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/preflight.py",
+      "source_sha256": "d27be8d0199931d206a29d476bfbf2a648e7d952e246fb24174bb187f4a56601",
+      "export_sha256": "d27be8d0199931d206a29d476bfbf2a648e7d952e246fb24174bb187f4a56601",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/read_console.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/read_console.py",
+      "source_sha256": "a5d45eb40fe39976f8e9b2593ee719256389b0630922bfdefd1b641ee6b9f0fb",
+      "export_sha256": "a5d45eb40fe39976f8e9b2593ee719256389b0630922bfdefd1b641ee6b9f0fb",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/refresh_unity.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/refresh_unity.py",
+      "source_sha256": "0f5c3e684212f9cc03286a92165c4f9aa4b13dbfde04fa80fc0cb1a3bee8b312",
+      "export_sha256": "0f5c3e684212f9cc03286a92165c4f9aa4b13dbfde04fa80fc0cb1a3bee8b312",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/run_tests.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/run_tests.py",
+      "source_sha256": "084502e1a4eb681a01c6071199b77383047db315a87e9d651af6e14d6c2f4400",
+      "export_sha256": "084502e1a4eb681a01c6071199b77383047db315a87e9d651af6e14d6c2f4400",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/script_apply_edits.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/script_apply_edits.py",
+      "source_sha256": "5796a2c2d1d3af9ef3b92f2bbab441b647f4927907822d259470e93a5fcc634a",
+      "export_sha256": "5796a2c2d1d3af9ef3b92f2bbab441b647f4927907822d259470e93a5fcc634a",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/set_active_instance.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/set_active_instance.py",
+      "source_sha256": "409978af5da9ce787bfa3a2e2ec52acb7984b42dc33521dc1a4f50ae35a51b53",
+      "export_sha256": "409978af5da9ce787bfa3a2e2ec52acb7984b42dc33521dc1a4f50ae35a51b53",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/unity_docs.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/unity_docs.py",
+      "source_sha256": "b6d17f0683bb179c9b81f01995f21c12bb20f3f5c798066909128a8b504d5ccd",
+      "export_sha256": "b6d17f0683bb179c9b81f01995f21c12bb20f3f5c798066909128a8b504d5ccd",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/unity_reflect.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/unity_reflect.py",
+      "source_sha256": "3ca37b28635dc771187875dc3fbbb6c394bf083453c4a807a9c8b570bb09d58e",
+      "export_sha256": "3ca37b28635dc771187875dc3fbbb6c394bf083453c4a807a9c8b570bb09d58e",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/utils.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/utils.py",
+      "source_sha256": "70c0694e4d131edcb07bbc0fb382ef6728e1911a670de3058bd0e6468faa4294",
+      "export_sha256": "70c0694e4d131edcb07bbc0fb382ef6728e1911a670de3058bd0e6468faa4294",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/services/tools/__init__.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/services/tools/__init__.py",
+      "source_sha256": "a42ea49cbf9303f5dd6973f3f30d342dfcc240cc87e39294dd378b7d406882a2",
+      "export_sha256": "a42ea49cbf9303f5dd6973f3f30d342dfcc240cc87e39294dd378b7d406882a2",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/animation.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/animation.py",
+      "source_sha256": "9a7320ba246b61e84744a0cae7412f0a9a240df781114efa7e24ab459476a033",
+      "export_sha256": "9a7320ba246b61e84744a0cae7412f0a9a240df781114efa7e24ab459476a033",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/asset.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/asset.py",
+      "source_sha256": "0a6d7c3c52c62e2b132d18727136f16864fc5d4dd69c959c3cec2c5a2079136b",
+      "export_sha256": "0a6d7c3c52c62e2b132d18727136f16864fc5d4dd69c959c3cec2c5a2079136b",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/asset_gen.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/asset_gen.py",
+      "source_sha256": "20b40e6a476cab833662ac14d93c9afbf891436957ad96094b393c4f25e41fc4",
+      "export_sha256": "20b40e6a476cab833662ac14d93c9afbf891436957ad96094b393c4f25e41fc4",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/audio.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/audio.py",
+      "source_sha256": "8135b817abaeb6041ecc0c03a8bebffa2f2f339f3c57e015c3101a2782f318df",
+      "export_sha256": "8135b817abaeb6041ecc0c03a8bebffa2f2f339f3c57e015c3101a2782f318df",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/batch.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/batch.py",
+      "source_sha256": "74b7102eadd220c408465d88c92ec26971780972d709f400d673d09ed5de4965",
+      "export_sha256": "74b7102eadd220c408465d88c92ec26971780972d709f400d673d09ed5de4965",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/blender.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/blender.py",
+      "source_sha256": "6d448c431b78721fc103a5e40b30ecf0290d603969db062fb4e909109a4d05a1",
+      "export_sha256": "6d448c431b78721fc103a5e40b30ecf0290d603969db062fb4e909109a4d05a1",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/build.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/build.py",
+      "source_sha256": "ed32fae7a4ca5a3e7ef03c03e8e57a4f3a404b791790404d8cc74080fbf9cb8c",
+      "export_sha256": "ed32fae7a4ca5a3e7ef03c03e8e57a4f3a404b791790404d8cc74080fbf9cb8c",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/camera.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/camera.py",
+      "source_sha256": "9d5efe5539d7adef078d0bb8f29644f70ee9ad2c2e094bd2deca6c512ea6840c",
+      "export_sha256": "9d5efe5539d7adef078d0bb8f29644f70ee9ad2c2e094bd2deca6c512ea6840c",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/code.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/code.py",
+      "source_sha256": "c4f87ae329efee178d8be0070d9e8694991860d60807da80973e2f78028e3e23",
+      "export_sha256": "c4f87ae329efee178d8be0070d9e8694991860d60807da80973e2f78028e3e23",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/component.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/component.py",
+      "source_sha256": "28013a7d7ca27e3f2e4dcfd7bda48a320742dd6abb5ed16a914f937b9bdda40e",
+      "export_sha256": "28013a7d7ca27e3f2e4dcfd7bda48a320742dd6abb5ed16a914f937b9bdda40e",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/docs.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/docs.py",
+      "source_sha256": "9da3fc23191c34382a3ada63b6d7076569b554ea0bbde7cbd135688e2acdcc31",
+      "export_sha256": "9da3fc23191c34382a3ada63b6d7076569b554ea0bbde7cbd135688e2acdcc31",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/editor.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/editor.py",
+      "source_sha256": "2f5cf8241e7d55b9cb34dadc842e18ff805af25833f26ab4b755cb0290749fd4",
+      "export_sha256": "2f5cf8241e7d55b9cb34dadc842e18ff805af25833f26ab4b755cb0290749fd4",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/gameobject.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/gameobject.py",
+      "source_sha256": "f2c4a6c5679083ee259dd1b16d4696ec3f2751a3884a3149b0148b51b4f04576",
+      "export_sha256": "f2c4a6c5679083ee259dd1b16d4696ec3f2751a3884a3149b0148b51b4f04576",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/graphics.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/graphics.py",
+      "source_sha256": "116abdd6e56ec7e2b6f9c17d71319ddcbd3e989540b7dd4bed15760818f841bf",
+      "export_sha256": "116abdd6e56ec7e2b6f9c17d71319ddcbd3e989540b7dd4bed15760818f841bf",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/instance.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/instance.py",
+      "source_sha256": "e6a609b69b4e1460b37e15c43083e8118709b6990a95f33be9dab7ea2fd92b9b",
+      "export_sha256": "e6a609b69b4e1460b37e15c43083e8118709b6990a95f33be9dab7ea2fd92b9b",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/lighting.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/lighting.py",
+      "source_sha256": "e0ea5bccfbd1f297ac4d3515626295e79e12c1b4f2095051c03c131a59e6876c",
+      "export_sha256": "e0ea5bccfbd1f297ac4d3515626295e79e12c1b4f2095051c03c131a59e6876c",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/material.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/material.py",
+      "source_sha256": "3b214653e4a3a1315349c992a56b2d8ffedd2bc66c240fb954f3d6e239765e7c",
+      "export_sha256": "3b214653e4a3a1315349c992a56b2d8ffedd2bc66c240fb954f3d6e239765e7c",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/packages.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/packages.py",
+      "source_sha256": "b3498082bb38827163b3948de5b8101304a800fb050d43e1265fd9427ac2fdc3",
+      "export_sha256": "b3498082bb38827163b3948de5b8101304a800fb050d43e1265fd9427ac2fdc3",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/physics.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/physics.py",
+      "source_sha256": "297abba1ebcd8f268f572425ec2a56efe389bedbde75580b20cae393dff7f5ad",
+      "export_sha256": "297abba1ebcd8f268f572425ec2a56efe389bedbde75580b20cae393dff7f5ad",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/prefab.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/prefab.py",
+      "source_sha256": "80a61f5c8ad1811840edbf4a84fa2b3cae4b9145537104279fcc3415868225ae",
+      "export_sha256": "80a61f5c8ad1811840edbf4a84fa2b3cae4b9145537104279fcc3415868225ae",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/probuilder.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/probuilder.py",
+      "source_sha256": "3d2b7cc0ff26a41c21ac6468def02728f769e08ba5fa9f74bfd9a6af6fda6e0c",
+      "export_sha256": "3d2b7cc0ff26a41c21ac6468def02728f769e08ba5fa9f74bfd9a6af6fda6e0c",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/profiler.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/profiler.py",
+      "source_sha256": "3e8c442dbcee909dfa28f76de6b3ad6a176bc810c323009f5b27f26b0e33e4d5",
+      "export_sha256": "3e8c442dbcee909dfa28f76de6b3ad6a176bc810c323009f5b27f26b0e33e4d5",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/reflect.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/reflect.py",
+      "source_sha256": "c49ddbbf00013aa4640b389d2ba4b88fa84ce9660cf66199464ee99e4cbd3e93",
+      "export_sha256": "c49ddbbf00013aa4640b389d2ba4b88fa84ce9660cf66199464ee99e4cbd3e93",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/scene.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/scene.py",
+      "source_sha256": "f4ec15ccbd9f6f7feb9bcebb6652eaa0001781f82ff13315b2a1d00539ee3879",
+      "export_sha256": "f4ec15ccbd9f6f7feb9bcebb6652eaa0001781f82ff13315b2a1d00539ee3879",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/script.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/script.py",
+      "source_sha256": "ef48b723a22e296ab97f8f50bc72294f30bd7da7d8989ad67f29c997864000c5",
+      "export_sha256": "ef48b723a22e296ab97f8f50bc72294f30bd7da7d8989ad67f29c997864000c5",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/shader.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/shader.py",
+      "source_sha256": "c3f9fc83a1897059aaa9932e94f74919bbd658e8ab6dfcc7afafef531ff69d51",
+      "export_sha256": "c3f9fc83a1897059aaa9932e94f74919bbd658e8ab6dfcc7afafef531ff69d51",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/texture.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/texture.py",
+      "source_sha256": "3f5d57ae120e1e51e748b443460bfeb20d08f3ef8339135eb9ad4591c1bdd00f",
+      "export_sha256": "3f5d57ae120e1e51e748b443460bfeb20d08f3ef8339135eb9ad4591c1bdd00f",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/tool.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/tool.py",
+      "source_sha256": "03e8c2f6a140b3e2e4598d2b6affafaf27b4cb2b607cac50ef2d85ada200cd9e",
+      "export_sha256": "03e8c2f6a140b3e2e4598d2b6affafaf27b4cb2b607cac50ef2d85ada200cd9e",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/ui.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/ui.py",
+      "source_sha256": "bbdae9785fde4fbab1765626680d86e004527b76b5e98e32b7ede27fb08a9b16",
+      "export_sha256": "bbdae9785fde4fbab1765626680d86e004527b76b5e98e32b7ede27fb08a9b16",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/vfx.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/vfx.py",
+      "source_sha256": "403cbd4e97bee872dd1adc3cdc679d2d5715a94ba2c05af970648498f95ba6e6",
+      "export_sha256": "403cbd4e97bee872dd1adc3cdc679d2d5715a94ba2c05af970648498f95ba6e6",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/commands/__init__.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/commands/__init__.py",
+      "source_sha256": "c501dfea8d1a7c35761ec53d8304b18dcaf34b8d5c3024866725985b16e53c89",
+      "export_sha256": "c501dfea8d1a7c35761ec53d8304b18dcaf34b8d5c3024866725985b16e53c89",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/utils/config.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/utils/config.py",
+      "source_sha256": "fe4dd70059971b6dacbfcb5821be4998ee3a90d9774f5b06a85a6dc9201ac9f7",
+      "export_sha256": "fe4dd70059971b6dacbfcb5821be4998ee3a90d9774f5b06a85a6dc9201ac9f7",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/utils/confirmation.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/utils/confirmation.py",
+      "source_sha256": "ecd1aed08e68828c29756453527767de0e6799698933d995dded3058c2c9c00f",
+      "export_sha256": "ecd1aed08e68828c29756453527767de0e6799698933d995dded3058c2c9c00f",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/utils/connection.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/utils/connection.py",
+      "source_sha256": "7f1da8dc9f4023a1dd482eab4432a1e8a3bcb0f9815a4cd1f84958d5d0e485eb",
+      "export_sha256": "7f1da8dc9f4023a1dd482eab4432a1e8a3bcb0f9815a4cd1f84958d5d0e485eb",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/utils/constants.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/utils/constants.py",
+      "source_sha256": "642ebc7f935f0be19294f7ee3ddf681dc3b3be6d793dc7b6fa824d8ce2df9258",
+      "export_sha256": "642ebc7f935f0be19294f7ee3ddf681dc3b3be6d793dc7b6fa824d8ce2df9258",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/utils/output.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/utils/output.py",
+      "source_sha256": "f7a75a539e6d6bf865ed478e84d879232ece278a6c6dd47d35fc75faada4df10",
+      "export_sha256": "f7a75a539e6d6bf865ed478e84d879232ece278a6c6dd47d35fc75faada4df10",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/utils/parsers.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/utils/parsers.py",
+      "source_sha256": "9a7a47d9b8599f72f72f297c7bb4a1ed9af6516f57ceedda52e09a2f1a55da99",
+      "export_sha256": "9a7a47d9b8599f72f72f297c7bb4a1ed9af6516f57ceedda52e09a2f1a55da99",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/utils/suggestions.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/utils/suggestions.py",
+      "source_sha256": "9fa286dccaefb9bdbc5fdacf15814b453b59e8778fa773e18407a88c6d96389c",
+      "export_sha256": "9fa286dccaefb9bdbc5fdacf15814b453b59e8778fa773e18407a88c6d96389c",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/cli/utils/__init__.py",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/cli/utils/__init__.py",
+      "source_sha256": "19b9bd8580bb52ac25a05c1d8ab5e0a3acf588192d47d63dea8ddb41cad8b9d7",
+      "export_sha256": "19b9bd8580bb52ac25a05c1d8ab5e0a3acf588192d47d63dea8ddb41cad8b9d7",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityNativeObserver/pyproject.toml",
+      "target": "queue/UnityProject/Tools/UnityNativeObserver/pyproject.toml",
+      "source_sha256": "937baab7041d98934cf890385a741e998818aca535e5a34468d194cbbc31866a",
+      "export_sha256": "c3d3f6967024dd0f3809d8fc234856ffc36c410254307ea8b75373ec23636915",
+      "modified_for_export": false
+    },
+    {
+      "source": "Assets/Editor/UnityWorkflowReadiness.cs",
+      "target": "queue/UnityProject/Assets/Editor/UnityWorkflowReadiness.cs",
+      "source_sha256": "6f6ad5295fa9e891221057cba2b0c103a171eb59b5466e8689ff5086da7052d0",
+      "export_sha256": "6f6ad5295fa9e891221057cba2b0c103a171eb59b5466e8689ff5086da7052d0",
+      "modified_for_export": false
+    },
+    {
+      "source": "Assets/Editor/UnityWorkflowReadiness.cs.meta",
+      "target": "queue/UnityProject/Assets/Editor/UnityWorkflowReadiness.cs.meta",
+      "source_sha256": "5913fbfbe6b3d051e0d9c9af09063debcdd2ba991115b3624ac11fb5cd5497ee",
+      "export_sha256": "5913fbfbe6b3d051e0d9c9af09063debcdd2ba991115b3624ac11fb5cd5497ee",
+      "modified_for_export": false
+    },
+    {
+      "source": "Assets/Editor/UnityWorkflow/EditorQueueWorkflow.cs",
+      "target": "queue/UnityProject/Assets/Editor/UnityWorkflow/EditorQueueWorkflow.cs",
+      "source_sha256": "6d2505ff16611d8815c8fb404e066be640561e76ba04575b32d3266fea0f565a",
+      "export_sha256": "6d2505ff16611d8815c8fb404e066be640561e76ba04575b32d3266fea0f565a",
+      "modified_for_export": false
+    },
+    {
+      "source": "Assets/Editor/UnityWorkflow/EditorQueueWorkflow.cs.meta",
+      "target": "queue/UnityProject/Assets/Editor/UnityWorkflow/EditorQueueWorkflow.cs.meta",
+      "source_sha256": "4c515c1507158c60ed00f060ca7d0e72e8e99576e7c1e252c4a927c2cc394817",
+      "export_sha256": "4c515c1507158c60ed00f060ca7d0e72e8e99576e7c1e252c4a927c2cc394817",
+      "modified_for_export": false
+    },
+    {
+      "source": "Tools/UnityReloadDiagnostics/observe_reload.py",
+      "target": "queue/UnityProject/Tools/UnityReloadDiagnostics/observe_reload.py",
+      "source_sha256": "7221adc55018220b6d444cedb1ce62d2905e488d4f201e02d97a746ca5565002",
+      "export_sha256": "7221adc55018220b6d444cedb1ce62d2905e488d4f201e02d97a746ca5565002",
+      "modified_for_export": false
+    }
+  ],
+  "export_digest_format": "SHA256 of UTF-8 text bytes with CRLF normalized to LF; source digests are raw bytes"
+}

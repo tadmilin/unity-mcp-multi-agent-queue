@@ -1,0 +1,559 @@
+{
+  "distribution": "mcpforunityserver10.3.0",
+  "files": [
+    {
+      "path": "cli/__init__.py",
+      "sha256": "7f61e35ea47d77c52189baeedb5d6df473e976b6ffd6f7430b6bff37017f7aa0"
+    },
+    {
+      "path": "cli/commands/__init__.py",
+      "sha256": "c501dfea8d1a7c35761ec53d8304b18dcaf34b8d5c3024866725985b16e53c89"
+    },
+    {
+      "path": "cli/commands/animation.py",
+      "sha256": "9a7320ba246b61e84744a0cae7412f0a9a240df781114efa7e24ab459476a033"
+    },
+    {
+      "path": "cli/commands/asset.py",
+      "sha256": "0a6d7c3c52c62e2b132d18727136f16864fc5d4dd69c959c3cec2c5a2079136b"
+    },
+    {
+      "path": "cli/commands/asset_gen.py",
+      "sha256": "20b40e6a476cab833662ac14d93c9afbf891436957ad96094b393c4f25e41fc4"
+    },
+    {
+      "path": "cli/commands/audio.py",
+      "sha256": "8135b817abaeb6041ecc0c03a8bebffa2f2f339f3c57e015c3101a2782f318df"
+    },
+    {
+      "path": "cli/commands/batch.py",
+      "sha256": "74b7102eadd220c408465d88c92ec26971780972d709f400d673d09ed5de4965"
+    },
+    {
+      "path": "cli/commands/blender.py",
+      "sha256": "6d448c431b78721fc103a5e40b30ecf0290d603969db062fb4e909109a4d05a1"
+    },
+    {
+      "path": "cli/commands/build.py",
+      "sha256": "ed32fae7a4ca5a3e7ef03c03e8e57a4f3a404b791790404d8cc74080fbf9cb8c"
+    },
+    {
+      "path": "cli/commands/camera.py",
+      "sha256": "9d5efe5539d7adef078d0bb8f29644f70ee9ad2c2e094bd2deca6c512ea6840c"
+    },
+    {
+      "path": "cli/commands/code.py",
+      "sha256": "c4f87ae329efee178d8be0070d9e8694991860d60807da80973e2f78028e3e23"
+    },
+    {
+      "path": "cli/commands/component.py",
+      "sha256": "28013a7d7ca27e3f2e4dcfd7bda48a320742dd6abb5ed16a914f937b9bdda40e"
+    },
+    {
+      "path": "cli/commands/docs.py",
+      "sha256": "9da3fc23191c34382a3ada63b6d7076569b554ea0bbde7cbd135688e2acdcc31"
+    },
+    {
+      "path": "cli/commands/editor.py",
+      "sha256": "2f5cf8241e7d55b9cb34dadc842e18ff805af25833f26ab4b755cb0290749fd4"
+    },
+    {
+      "path": "cli/commands/gameobject.py",
+      "sha256": "f2c4a6c5679083ee259dd1b16d4696ec3f2751a3884a3149b0148b51b4f04576"
+    },
+    {
+      "path": "cli/commands/graphics.py",
+      "sha256": "116abdd6e56ec7e2b6f9c17d71319ddcbd3e989540b7dd4bed15760818f841bf"
+    },
+    {
+      "path": "cli/commands/instance.py",
+      "sha256": "e6a609b69b4e1460b37e15c43083e8118709b6990a95f33be9dab7ea2fd92b9b"
+    },
+    {
+      "path": "cli/commands/lighting.py",
+      "sha256": "e0ea5bccfbd1f297ac4d3515626295e79e12c1b4f2095051c03c131a59e6876c"
+    },
+    {
+      "path": "cli/commands/material.py",
+      "sha256": "3b214653e4a3a1315349c992a56b2d8ffedd2bc66c240fb954f3d6e239765e7c"
+    },
+    {
+      "path": "cli/commands/packages.py",
+      "sha256": "b3498082bb38827163b3948de5b8101304a800fb050d43e1265fd9427ac2fdc3"
+    },
+    {
+      "path": "cli/commands/physics.py",
+      "sha256": "297abba1ebcd8f268f572425ec2a56efe389bedbde75580b20cae393dff7f5ad"
+    },
+    {
+      "path": "cli/commands/prefab.py",
+      "sha256": "80a61f5c8ad1811840edbf4a84fa2b3cae4b9145537104279fcc3415868225ae"
+    },
+    {
+      "path": "cli/commands/probuilder.py",
+      "sha256": "3d2b7cc0ff26a41c21ac6468def02728f769e08ba5fa9f74bfd9a6af6fda6e0c"
+    },
+    {
+      "path": "cli/commands/profiler.py",
+      "sha256": "3e8c442dbcee909dfa28f76de6b3ad6a176bc810c323009f5b27f26b0e33e4d5"
+    },
+    {
+      "path": "cli/commands/reflect.py",
+      "sha256": "c49ddbbf00013aa4640b389d2ba4b88fa84ce9660cf66199464ee99e4cbd3e93"
+    },
+    {
+      "path": "cli/commands/scene.py",
+      "sha256": "f4ec15ccbd9f6f7feb9bcebb6652eaa0001781f82ff13315b2a1d00539ee3879"
+    },
+    {
+      "path": "cli/commands/script.py",
+      "sha256": "ef48b723a22e296ab97f8f50bc72294f30bd7da7d8989ad67f29c997864000c5"
+    },
+    {
+      "path": "cli/commands/shader.py",
+      "sha256": "c3f9fc83a1897059aaa9932e94f74919bbd658e8ab6dfcc7afafef531ff69d51"
+    },
+    {
+      "path": "cli/commands/texture.py",
+      "sha256": "3f5d57ae120e1e51e748b443460bfeb20d08f3ef8339135eb9ad4591c1bdd00f"
+    },
+    {
+      "path": "cli/commands/tool.py",
+      "sha256": "03e8c2f6a140b3e2e4598d2b6affafaf27b4cb2b607cac50ef2d85ada200cd9e"
+    },
+    {
+      "path": "cli/commands/ui.py",
+      "sha256": "bbdae9785fde4fbab1765626680d86e004527b76b5e98e32b7ede27fb08a9b16"
+    },
+    {
+      "path": "cli/commands/vfx.py",
+      "sha256": "403cbd4e97bee872dd1adc3cdc679d2d5715a94ba2c05af970648498f95ba6e6"
+    },
+    {
+      "path": "cli/main.py",
+      "sha256": "269462cc3a9a0ed68874d460b9fd84cd879b339254be80a7f9bf95a5233b38fb"
+    },
+    {
+      "path": "cli/utils/__init__.py",
+      "sha256": "19b9bd8580bb52ac25a05c1d8ab5e0a3acf588192d47d63dea8ddb41cad8b9d7"
+    },
+    {
+      "path": "cli/utils/config.py",
+      "sha256": "fe4dd70059971b6dacbfcb5821be4998ee3a90d9774f5b06a85a6dc9201ac9f7"
+    },
+    {
+      "path": "cli/utils/confirmation.py",
+      "sha256": "ecd1aed08e68828c29756453527767de0e6799698933d995dded3058c2c9c00f"
+    },
+    {
+      "path": "cli/utils/connection.py",
+      "sha256": "7f1da8dc9f4023a1dd482eab4432a1e8a3bcb0f9815a4cd1f84958d5d0e485eb"
+    },
+    {
+      "path": "cli/utils/constants.py",
+      "sha256": "642ebc7f935f0be19294f7ee3ddf681dc3b3be6d793dc7b6fa824d8ce2df9258"
+    },
+    {
+      "path": "cli/utils/output.py",
+      "sha256": "f7a75a539e6d6bf865ed478e84d879232ece278a6c6dd47d35fc75faada4df10"
+    },
+    {
+      "path": "cli/utils/parsers.py",
+      "sha256": "9a7a47d9b8599f72f72f297c7bb4a1ed9af6516f57ceedda52e09a2f1a55da99"
+    },
+    {
+      "path": "cli/utils/suggestions.py",
+      "sha256": "9fa286dccaefb9bdbc5fdacf15814b453b59e8778fa773e18407a88c6d96389c"
+    },
+    {
+      "path": "core/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "core/config.py",
+      "sha256": "289bc5e442695c02d2680491f880b5fdb04bb651af27b7304bf7246dee0419fa"
+    },
+    {
+      "path": "core/constants.py",
+      "sha256": "3e166cf76e8d89eeccba2823bb5c64541ca755a524b5994ff6524c1e0bb8feda"
+    },
+    {
+      "path": "core/logging_decorator.py",
+      "sha256": "0fd083eeb16f433f8c046f86e229e2cd08f422fafa75f73d441993af0eeaf262"
+    },
+    {
+      "path": "core/telemetry.py",
+      "sha256": "cc88e640a50d5b44bcdb64929645f28e3088b97d19a524da64fe29014d2b0a3c"
+    },
+    {
+      "path": "core/telemetry_decorator.py",
+      "sha256": "c9c493af354d08340749dfb198858ea557ca15444fc698997bf5e43900060c0a"
+    },
+    {
+      "path": "main.py",
+      "sha256": "c75148c2dae3207c1bbdb3786eaac13eb1c0310ef7dd0712f7d325d22d53d978"
+    },
+    {
+      "path": "models/__init__.py",
+      "sha256": "276a33ada23968392a2dbe772af5e34c3696821ff1545c695ab71131e90ec0f9"
+    },
+    {
+      "path": "models/models.py",
+      "sha256": "4126c57392248bfa89a900705b75b3287b66af6810199d7b86784703bc845341"
+    },
+    {
+      "path": "models/unity_response.py",
+      "sha256": "c6f809849de94bcf804d0867539a308a380ee35e35516e7d7f97509b5a2155ec"
+    },
+    {
+      "path": "services/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "services/api_key_service.py",
+      "sha256": "997ac80cd389e856bf13ed5f308b53abec99efba20ee804b68fddb7be4209958"
+    },
+    {
+      "path": "services/custom_tool_service.py",
+      "sha256": "ed71d50b7e6e65594e0d293387a3c275cf1623c4841812b819a005de56a0679f"
+    },
+    {
+      "path": "services/registry/__init__.py",
+      "sha256": "bb64f25e7996967ef4101b398fe6f169d1e796abdbe74eeb4593836dc763228f"
+    },
+    {
+      "path": "services/registry/resource_registry.py",
+      "sha256": "4ff2b39ea82fb7990a815ee653ce676f42e516e078ae0f939b80a3871b7e21c2"
+    },
+    {
+      "path": "services/registry/tool_registry.py",
+      "sha256": "d8ab45814128f78bac138132c7754a9d62b777b2b399c9050ca1bef5798b7231"
+    },
+    {
+      "path": "services/resources/__init__.py",
+      "sha256": "8a78846d8c7ec48b14ef656e83fd7b64539f6f07a9fe1b53ddfd91a7a25f2310"
+    },
+    {
+      "path": "services/resources/active_tool.py",
+      "sha256": "8479ac00a9272c647dd645dea0c54ad4a4a7bfdcec534e58a8375c4134c3d371"
+    },
+    {
+      "path": "services/resources/cameras.py",
+      "sha256": "5605d5f3f30aae6a69ce6573f36e9441c6e2d0188a8fd4af4ec19ac5a719f12a"
+    },
+    {
+      "path": "services/resources/custom_tools.py",
+      "sha256": "e8f0064332a5d27af8d1aa736dd11c7d0646003e0265d9c4e8e739d5aced8b33"
+    },
+    {
+      "path": "services/resources/editor_state.py",
+      "sha256": "0c2451ff7fbfd8e8e0a88ca4190c656c3b98f65fb450fc94d1e33be83e128992"
+    },
+    {
+      "path": "services/resources/gameobject.py",
+      "sha256": "58796215858c7aec555ca40150fa93fbc699a9888ade68387f2859da74b22958"
+    },
+    {
+      "path": "services/resources/layers.py",
+      "sha256": "f096e90a869bbbfcf4f3379b1ecc66e158d284b93a1756b47b57ef24f0397185"
+    },
+    {
+      "path": "services/resources/menu_items.py",
+      "sha256": "36e6f8bc14ec1bb391e6015c26d1b9846344877d324ae78c6f43a87ffdf566e8"
+    },
+    {
+      "path": "services/resources/prefab.py",
+      "sha256": "c633270ae337d47ec7410d313e379c0750e7f53404608e954c2bcc5d80a2d4c3"
+    },
+    {
+      "path": "services/resources/prefab_stage.py",
+      "sha256": "c081429cbda091d1981f46a75a579b33baeef474c5b19f7068e918b5497f60cc"
+    },
+    {
+      "path": "services/resources/project_info.py",
+      "sha256": "c2a1ba9c0fceaedb72d31dd147497858db7129949238624973848052b2ad4d0e"
+    },
+    {
+      "path": "services/resources/renderer_features.py",
+      "sha256": "96f250c2e2c92dc1a493244b4059e161eb288e624cdfaae4791f12bbb42fe25a"
+    },
+    {
+      "path": "services/resources/rendering_stats.py",
+      "sha256": "7ace63d238eeb454191e44bc10d2364df3c155875975991dc56c9694a3a6d167"
+    },
+    {
+      "path": "services/resources/selection.py",
+      "sha256": "ce4004e5fb6cc0f13caa5eba42c93f1bfafc28592c2bbc3272dbea19a036b326"
+    },
+    {
+      "path": "services/resources/tags.py",
+      "sha256": "e3924e6c78302100b65c0fc378b19cfd4f4624143a0aca039a799845e7dc4ae8"
+    },
+    {
+      "path": "services/resources/tests.py",
+      "sha256": "290e2050f302f8c63c5554fe7fa28571a26d39ece422b2c67459f08a24e5b4e6"
+    },
+    {
+      "path": "services/resources/tool_groups.py",
+      "sha256": "c199eff15f5cc60d3db3b14b8d0f11a4367e1feb06bf1c752b6c10ee3144e20f"
+    },
+    {
+      "path": "services/resources/unity_instances.py",
+      "sha256": "0c5d5e446a0415c4eea16295861b1c4c063038c958f5613f8f9859193d7a77fe"
+    },
+    {
+      "path": "services/resources/volumes.py",
+      "sha256": "f61d2513f1557057a6d673227b617b129c864e1693356d06daa55495aa1521c5"
+    },
+    {
+      "path": "services/resources/windows.py",
+      "sha256": "81dc18dd802190e94a56eaf85414821a9b12bdd5d230f2edcbb1f6223374b327"
+    },
+    {
+      "path": "services/state/external_changes_scanner.py",
+      "sha256": "6625eef1970ae41fa1bfb09a24b9a71086bd271ce0381a5d9abb110d8d9e2b92"
+    },
+    {
+      "path": "services/tools/__init__.py",
+      "sha256": "a42ea49cbf9303f5dd6973f3f30d342dfcc240cc87e39294dd378b7d406882a2"
+    },
+    {
+      "path": "services/tools/batch_execute.py",
+      "sha256": "c2253e3f0d96d27dc717880c2f010a2206d17ebe7d14d268eaf598a6d9ed923f"
+    },
+    {
+      "path": "services/tools/blender_bridge.py",
+      "sha256": "8eb9fb3ae89b5d091b26d66fbbd8ae7f3f32676dc6dd170a04d1158fdbe99db8"
+    },
+    {
+      "path": "services/tools/debug_request_context.py",
+      "sha256": "ac59a75f5519d741c85fc88c48aa09bbea6047938a37aab5ad14422fadac5b94"
+    },
+    {
+      "path": "services/tools/execute_code.py",
+      "sha256": "47469b1802336fad12cd2c0fa707ed251ef1be782b4939139c7976ee87a9afce"
+    },
+    {
+      "path": "services/tools/execute_custom_tool.py",
+      "sha256": "e9b66f7e71c358ce6724bd687eb257863582a743696f750ce6e268acb7f58a43"
+    },
+    {
+      "path": "services/tools/execute_menu_item.py",
+      "sha256": "c3f2ab816d4070ae20d6fa5600cc18ef3df6990563f711643f227692e0cee1c1"
+    },
+    {
+      "path": "services/tools/find_gameobjects.py",
+      "sha256": "350c71a67302f4bce6645d19e68199666ff1f59799a727f33bf5b7befe3eb1ec"
+    },
+    {
+      "path": "services/tools/find_in_file.py",
+      "sha256": "c0d602b3dc7107b77a17d2fc1d98a74db58dfc11e6e9d6af14d380ad559edac7"
+    },
+    {
+      "path": "services/tools/generate_audio.py",
+      "sha256": "0cfed6e8abc6448f68bcf4d1333273b27e46404585c2dfeed4cbb565de3fe34e"
+    },
+    {
+      "path": "services/tools/generate_image.py",
+      "sha256": "ca8025e3aa01e75654c76c7355415521aee658d553d0e3da5a4ef856b37fe862"
+    },
+    {
+      "path": "services/tools/generate_model.py",
+      "sha256": "93f0fb2a66503501ffba311cc3100bd65606918aff0b01e8533a382ccd3f7a72"
+    },
+    {
+      "path": "services/tools/import_model.py",
+      "sha256": "fae0d9b991895589564237a585e7f46303b3a5941905ab4dbece8c886423fade"
+    },
+    {
+      "path": "services/tools/import_model_file.py",
+      "sha256": "98e77308bceb30deb46a301d7b80f271c2d157619c99b33c526d9fbef59fc5d3"
+    },
+    {
+      "path": "services/tools/manage_animation.py",
+      "sha256": "928be1b9d0f3365cd71abd7f509addb74a2aae5eb90a268c577adc49208515a8"
+    },
+    {
+      "path": "services/tools/manage_asset.py",
+      "sha256": "22ac23d2cda3e10ee50657c2a6ed480f907597a872d047bf900d143670463f70"
+    },
+    {
+      "path": "services/tools/manage_build.py",
+      "sha256": "7e6c1768847ecad85d5e0322d67428d06b27707d809c42e20808272920bf6a99"
+    },
+    {
+      "path": "services/tools/manage_camera.py",
+      "sha256": "a4c2f7123ee0df800ce142882ff6e8f36536dbc49fb847917b6b6086fb5bfd14"
+    },
+    {
+      "path": "services/tools/manage_components.py",
+      "sha256": "2cbbcbf3784d21b14235a005c01a7bf8469fe1334afdb7790363460d087194cf"
+    },
+    {
+      "path": "services/tools/manage_editor.py",
+      "sha256": "591b15c39dea49e2889295818ca15b3696a3cfb9ceca30e6a6e581baec87ea83"
+    },
+    {
+      "path": "services/tools/manage_gameobject.py",
+      "sha256": "5dbb89d27246db434acc4b85acd97c6a621945f09463d5508ba4c1bfdf960e0e"
+    },
+    {
+      "path": "services/tools/manage_graphics.py",
+      "sha256": "716b9214d59a3de3590b1f2bc2825b06e3732481dc300655db2e9fc6536387bc"
+    },
+    {
+      "path": "services/tools/manage_material.py",
+      "sha256": "79490c8481f18290c35bfb0f514befe737f2946d0d5f158b9ac467798fba573d"
+    },
+    {
+      "path": "services/tools/manage_packages.py",
+      "sha256": "c194c5f7f0082c532118a0a01a8dc0916c66c1d0f5ad798b71d890da88e10ab4"
+    },
+    {
+      "path": "services/tools/manage_physics.py",
+      "sha256": "b8dcf66c70f5ccd049afdf7112118a5b3a1191b52da0642de2efc68e45cd0f0f"
+    },
+    {
+      "path": "services/tools/manage_prefabs.py",
+      "sha256": "33ceb2729a23fa55aa4e23c374a03cf88a56693bd41d69a29091a495e5426a95"
+    },
+    {
+      "path": "services/tools/manage_probuilder.py",
+      "sha256": "7ca9cef968eef31c94fee43007861c2d74d74f8ad4ba00ed7d92a2abf1a56935"
+    },
+    {
+      "path": "services/tools/manage_profiler.py",
+      "sha256": "726310f272e49de2f53b1b548dcdec91400951ba00a33dc6883bd8cca1b05380"
+    },
+    {
+      "path": "services/tools/manage_scene.py",
+      "sha256": "acf30bc4da2bb89d340c4d8d83b4b89f2fd8eae7ae9dbcbacd4a7b8878169755"
+    },
+    {
+      "path": "services/tools/manage_script.py",
+      "sha256": "7405bb8204fd74cfd5906abddb9d01783a443be475437f313719dd966e497fe1"
+    },
+    {
+      "path": "services/tools/manage_scriptable_object.py",
+      "sha256": "3a2322ba912968d76c2fe14146822c2702b927d5c3b7ef8620e7a9ce18e09c32"
+    },
+    {
+      "path": "services/tools/manage_shader.py",
+      "sha256": "22319b638913fc0b0e055d0b642ec73f8e0836ea7c78cca0b414b2296d40ab39"
+    },
+    {
+      "path": "services/tools/manage_texture.py",
+      "sha256": "a159c2d0885e6596c03dcedd50d6770459fcf8ab2f6f3e91794efc867a47e5d6"
+    },
+    {
+      "path": "services/tools/manage_tools.py",
+      "sha256": "f478e6a47be344439b321c87de9afde224c63d83c0f3b8a0bd9169b36a58f871"
+    },
+    {
+      "path": "services/tools/manage_ui.py",
+      "sha256": "f2a34f2a447a9d8dcceea52d80f8d8b41473553f4976dae1659b8c21a568d479"
+    },
+    {
+      "path": "services/tools/manage_vfx.py",
+      "sha256": "557927130d7875265db7bf6b9d54cee17596704c97ada4742e457e498913fc67"
+    },
+    {
+      "path": "services/tools/preflight.py",
+      "sha256": "d27be8d0199931d206a29d476bfbf2a648e7d952e246fb24174bb187f4a56601"
+    },
+    {
+      "path": "services/tools/read_console.py",
+      "sha256": "a5d45eb40fe39976f8e9b2593ee719256389b0630922bfdefd1b641ee6b9f0fb"
+    },
+    {
+      "path": "services/tools/refresh_unity.py",
+      "sha256": "0f5c3e684212f9cc03286a92165c4f9aa4b13dbfde04fa80fc0cb1a3bee8b312"
+    },
+    {
+      "path": "services/tools/run_tests.py",
+      "sha256": "084502e1a4eb681a01c6071199b77383047db315a87e9d651af6e14d6c2f4400"
+    },
+    {
+      "path": "services/tools/script_apply_edits.py",
+      "sha256": "5796a2c2d1d3af9ef3b92f2bbab441b647f4927907822d259470e93a5fcc634a"
+    },
+    {
+      "path": "services/tools/set_active_instance.py",
+      "sha256": "409978af5da9ce787bfa3a2e2ec52acb7984b42dc33521dc1a4f50ae35a51b53"
+    },
+    {
+      "path": "services/tools/unity_docs.py",
+      "sha256": "b6d17f0683bb179c9b81f01995f21c12bb20f3f5c798066909128a8b504d5ccd"
+    },
+    {
+      "path": "services/tools/unity_reflect.py",
+      "sha256": "3ca37b28635dc771187875dc3fbbb6c394bf083453c4a807a9c8b570bb09d58e"
+    },
+    {
+      "path": "services/tools/utils.py",
+      "sha256": "70c0694e4d131edcb07bbc0fb382ef6728e1911a670de3058bd0e6468faa4294"
+    },
+    {
+      "path": "transport/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "transport/blender_timeout.py",
+      "sha256": "94ac09b968866def769bcc870a2721a1fcf7d7b1e168dc6a05ce66776f67184f"
+    },
+    {
+      "path": "transport/legacy/port_discovery.py",
+      "sha256": "06d7e5bd7808b3c9abe9afb47c5c6dd0f0f51a9208a087a085fa39fcff5fac00"
+    },
+    {
+      "path": "transport/legacy/stdio_port_registry.py",
+      "sha256": "8f888046e3fac1eb69a4d0c6f2a29ebafa356c929c4a5804859bd2ca5fee7f40"
+    },
+    {
+      "path": "transport/legacy/unity_connection.py",
+      "sha256": "8bdc1a3f028e871865c1f61b380f442b6114a50bb105a884b0e63851d5bc5f4b"
+    },
+    {
+      "path": "transport/models.py",
+      "sha256": "d57169c4718cf66cf170a5372c11ac7a3a91793f0388211dd8bb379046bfd2de"
+    },
+    {
+      "path": "transport/plugin_hub.py",
+      "sha256": "7f522f81ac12fde829a9e3753dc0cdcca2d6f566fabb3e3c7742db0762793b01"
+    },
+    {
+      "path": "transport/plugin_registry.py",
+      "sha256": "6dcfa6b794a28ce29dde27508a4d099b816a7cafb18a3f50277764070d6cc3ab"
+    },
+    {
+      "path": "transport/unity_instance_middleware.py",
+      "sha256": "1a5655eee64cb90bede93f852612ae0e5093a91a6ccb1fa021034b09b9cd7112"
+    },
+    {
+      "path": "transport/unity_transport.py",
+      "sha256": "5b826d4499e8450419d0647aafbe4ad5215c202eed74bb22c36f24f34cf4a7f8"
+    },
+    {
+      "path": "utils/focus_nudge.py",
+      "sha256": "57e5bb6cfdf72cf5972d5c53924bca465fa4bffd9f1eb9bdb46a01b6e5f51d4a"
+    },
+    {
+      "path": "utils/log_paths.py",
+      "sha256": "12f7b0b229ad6755430a7f5a6e333032dd37c1b2518a6c210d9b55cc124ede5f"
+    },
+    {
+      "path": "utils/module_discovery.py",
+      "sha256": "332e3ca1f075054ab1881a0064019b11a2d061db2b0e1326f0c6b204ffdb5124"
+    }
+  ],
+  "dependency_pins": [
+    "httpx==0.28.1",
+    "fastmcp==3.4.11",
+    "mcp==1.30.0",
+    "pydantic==2.14.1",
+    "tomli==2.5.0",
+    "fastapi==0.162.0",
+    "uvicorn==0.54.0",
+    "click==8.5.0"
+  ]
+}

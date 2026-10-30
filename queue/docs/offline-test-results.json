@@ -1,0 +1,56 @@
+{
+  "scope": "Offline integration/unit tests with temporary ledgers, fake authorities/HTTP and test-owned process lifetime. No Unity acceptance or fresh installation qualification.",
+  "passed": false,
+  "python": "3.13.7",
+  "platform": "win32",
+  "dependency_source": "existing external directory",
+  "results": [
+    {
+      "suite": "coordinator",
+      "exit_code": 0,
+      "tests": 38,
+      "seconds": 2.747,
+      "diagnostic_summary": []
+    },
+    {
+      "suite": "workflow",
+      "exit_code": 1,
+      "tests": 207,
+      "seconds": 31.736,
+      "diagnostic_summary": [
+        "ERROR: test_real_sdk_registration_and_error_mapping (test_bridge.BridgeTests.test_real_sdk_registration_and_error_mapping)",
+        "KeyError: 'job_id'",
+        "ERROR: test_native_run_and_poll_reuse_same_durable_job (test_native_route.NativeRouteTests.test_native_run_and_poll_reuse_same_durable_job)",
+        "KeyError: 'data'",
+        "FAIL: test_sdk_rejects_new_unchecked_job_without_admission (test_bridge.BridgeTests.test_sdk_rejects_new_unchecked_job_without_admission)",
+        "AssertionError: 'completion_steps' not found in 'unable to open database file'",
+        "FAILED (failures=1, errors=2, skipped=2)"
+      ]
+    },
+    {
+      "suite": "native_observer",
+      "exit_code": 0,
+      "tests": 12,
+      "seconds": 2.517,
+      "diagnostic_summary": []
+    },
+    {
+      "suite": "test_direct_client.mjs",
+      "exit_code": 0,
+      "seconds": 0.19,
+      "diagnostic_summary": []
+    },
+    {
+      "suite": "test_observe_client.mjs",
+      "exit_code": 0,
+      "seconds": 0.162,
+      "diagnostic_summary": []
+    },
+    {
+      "suite": "test_client_trace.mjs",
+      "exit_code": 0,
+      "seconds": 0.202,
+      "diagnostic_summary": []
+    }
+  ]
+}

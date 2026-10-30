@@ -1,3 +1,13 @@
+# Unity MCP Multi-Agent Queue
+
+Research preview extending [CoplayDev/unity-mcp](https://github.com/CoplayDev/unity-mcp) with shared-Editor ownership, durable queued workflows and execution records.
+
+**Start here: [queue documentation](queue/README.md)** ? [evaluation](queue/docs/evaluation.md) ? [validation and limits](queue/docs/validation.md)
+
+This branch is based on upstream commit `aa5fc638d623f56178d50329d9ad8c541a57fe66`. It is not an official upstream release. Fresh Unity installation of this export is not yet qualified. The original upstream README follows.
+
+---
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="docs/images/logo-header-dark.png">

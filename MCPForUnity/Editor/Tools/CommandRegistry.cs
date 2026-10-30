@@ -266,7 +266,8 @@ namespace MCPForUnity.Editor.Tools
                 );
             }
 
-            return handlerInfo.SyncHandler;
+            return parameters => EditorQueueGateway.MayInvoke(commandName)
+                ? handlerInfo.SyncHandler(parameters) : EditorQueueGateway.Denied();
         }
 
         /// <summary>
@@ -279,6 +280,7 @@ namespace MCPForUnity.Editor.Tools
         /// <returns>The result for synchronous commands, or null for async commands (TCS will be completed later)</returns>
         public static object ExecuteCommand(string commandName, JObject @params, TaskCompletionSource<string> tcs)
         {
+            if (!EditorQueueGateway.MayInvoke(commandName)) return EditorQueueGateway.Denied();
             var handlerInfo = GetHandlerInfo(commandName);
 
             if (handlerInfo.IsAsync)
@@ -303,6 +305,7 @@ namespace MCPForUnity.Editor.Tools
         /// <param name="params">Parameters to pass to the command (optional).</param>
         public static Task<object> InvokeCommandAsync(string commandName, JObject @params)
         {
+            if (!EditorQueueGateway.MayInvoke(commandName)) return Task.FromResult(EditorQueueGateway.Denied());
             var handlerInfo = GetHandlerInfo(commandName);
             var payload = @params ?? new JObject();
 

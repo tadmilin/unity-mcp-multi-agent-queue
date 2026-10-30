@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.scratch/
+.venv/
+.tools/
+Library/
+JobQueue/
+Backups/
+Logs/
+Temp/
+*.sqlite3*
+*.log
+*credentials*.json
+.env
+.env.*

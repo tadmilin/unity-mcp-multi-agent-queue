@@ -340,6 +340,10 @@ namespace MCPForUnity.Editor.Services.Transport
                 }
 
                 var parameters = command.@params ?? new JObject();
+                // Capability tokens and submitted file contents must never enter command logs.
+                var logParameters = command.type == "editor_queue"
+                    ? new JObject { ["action"] = parameters["action"], ["redacted"] = true }
+                    : parameters;
 
                 // Block execution of disabled resources
                 var resourceMeta = MCPServiceLocator.ResourceDiscovery.GetResourceMetadata(command.type);
@@ -369,7 +373,7 @@ namespace MCPForUnity.Editor.Services.Transport
                 {
                     // Async command – cleanup after completion on next editor frame to preserve order.
                     var capturedType = command.type;
-                    var capturedParams = parameters;
+                    var capturedParams = logParameters;
                     var capturedLogType = logType;
                     pending.CompletionSource.Task.ContinueWith(t =>
                     {
@@ -410,7 +414,7 @@ namespace MCPForUnity.Editor.Services.Transport
                     syncLogStatus = "ERROR";
                     syncLogError = errResp.Error;
                 }
-                McpLogRecord.Log(command.type, parameters, logType, syncLogStatus, sw?.ElapsedMilliseconds ?? 0, syncLogError);
+                McpLogRecord.Log(command.type, logParameters, logType, syncLogStatus, sw?.ElapsedMilliseconds ?? 0, syncLogError);
 
                 var response = new { status = "success", result };
                 pending.TrySetResult(JsonConvert.SerializeObject(response));
