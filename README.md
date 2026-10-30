@@ -1,124 +1,48 @@
 # Unity MCP Multi-Agent Queue
 
-Research preview extending [CoplayDev/unity-mcp](https://github.com/CoplayDev/unity-mcp) with shared-Editor ownership, durable queued workflows and execution records.
+A research preview for coordinating multiple AI agents that share one Unity Editor. Built on [CoplayDev/unity-mcp](https://github.com/CoplayDev/unity-mcp), with Editor ownership, durable queued jobs, bounded scene/Play workflows, and recorded execution results.
 
-**Start here: [queue documentation](queue/README.md)** ? [evaluation](queue/docs/evaluation.md) ? [validation and limits](queue/docs/validation.md)
+**Preview branch: `queue-research-preview`.** This is an independent extension, not an official CoplayDev release. Installation and live Unity acceptance have separate validation statuses; see [validation](queue/docs/validation.md).
 
-This branch is based on upstream commit `aa5fc638d623f56178d50329d9ad8c541a57fe66`. It is not an official upstream release. Fresh Unity installation of this export is not yet qualified. The original upstream README follows.
+## What this adds
 
----
+- A shared Editor gate so participating clients execute under the current owner's permission.
+- Durable submissions with a stable key and result recovery after a lost response.
+- A central executor for waiting, claiming, cleanup and release within supported job/phase scopes.
+- Client observation of an existing request without submitting the mutation again.
 
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/images/logo-header-dark.png">
-    <img alt="MCP for Unity" src="docs/images/logo-header-light.png" width="400">
-  </picture>
-</p>
+The queue does not guarantee that an AI session stays alive or resumes after its turn ends. Historical trials do not establish faster execution or fewer total calls. Read the [evaluation and limitations](queue/docs/evaluation.md).
 
-<div align="center">
+## Install the preview
 
-[English](README.md) <img src="docs/images/connector.svg" alt="↔" height="14"> [简体中文](docs/i18n/README-zh.md) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; [Discord](https://discord.gg/y4p8KfzrN4) <img src="docs/images/connector.svg" alt="↔" height="14"> [Wiki](https://coplaydev.github.io/unity-mcp/)
+Use **Windows, CPython 3.13, Git, and a fresh isolated Unity project**. Close that project's Editor before setup. This installer supports first installation only; it refuses existing queue files or an existing MCP for Unity dependency.
 
-#### Proudly sponsored and maintained by [Aura](https://www.tryaura.dev/) — the AI assistant for Unreal & Unity.
-##### And don't miss [Godot AI](https://github.com/hi-godot/godot-ai), the new open source project from the makers of MCP for Unity.
-
-</div>
-
-<p align="center"><b>Create your Unity apps with LLMs.</b> MCP for Unity bridges AI assistants — Claude, Codex, VS Code, local LLMs, and more — with your Unity Editor via <a href="https://modelcontextprotocol.io/introduction">Model Context Protocol</a>. Give your LLM the tools to manage assets, control scenes, edit scripts, run tests, and automate your game dev workflows.</p>
-
-<p align="center">
-  <img alt="MCP for Unity building a scene" src="docs/images/building_scene.gif">
-</p>
-
----
-
-<!-- recent-updates:start -->
-<details>
-<summary><strong>Recent Updates</strong></summary>
-
-* **[v10.0.0](https://github.com/CoplayDev/unity-mcp/releases/tag/v10.0.0)** (2026-06-30)
-* **[v9.7.3](https://github.com/CoplayDev/unity-mcp/releases/tag/v9.7.3)** (2026-06-15)
-* **[v9.7.1](https://github.com/CoplayDev/unity-mcp/releases/tag/v9.7.1)** (2026-05-24)
-* **[v9.7.0](https://github.com/CoplayDev/unity-mcp/releases/tag/v9.7.0)** (2026-05-22)
-* **[v9.6.8](https://github.com/CoplayDev/unity-mcp/releases/tag/v9.6.8)** (2026-04-27)
-
-Full history: [Release Notes](https://coplaydev.github.io/unity-mcp/releases).
-
-</details>
-<!-- recent-updates:end -->
-
----
-
-## What it does
-
-Control the Unity Editor in natural language from any MCP client — create scenes & GameObjects, edit C# scripts, manage assets, run tests, profile, and build. 48 focused MCP tool entrypoints, any client, free & MIT.
-
-**[Browse the full tool catalog →](https://coplaydev.github.io/unity-mcp/reference/tools/)**
-
----
-
-## Quickstart
-
-**Requirements:** Unity **2021.3 LTS → 6.x** · Python **3.10+** (via [`uv`](https://docs.astral.sh/uv/)). Works with **any MCP client** — Claude Desktop & Code, Cursor, VS Code, Windsurf, Cline, Gemini CLI, and more.
-
-1. **Install** — Unity → Package Manager → Add from git URL:
-   `https://github.com/CoplayDev/unity-mcp.git?path=/MCPForUnity#main` &nbsp;_(pin `#v10.0.0` for this release, or `openupm add com.coplaydev.unity-mcp`)_
-2. **Configure** — `Window → MCP for Unity → Configure All Detected Clients`.
-3. **Prompt** — *"Create a cube at the origin and add a Rigidbody."* The cube appears in seconds.
-
----
-
-## Community
-
-- [Discord](https://discord.gg/y4p8KfzrN4) — chat with maintainers and other contributors
-- [Issues](https://github.com/CoplayDev/unity-mcp/issues) — bugs and feature requests
-- [Discussions](https://github.com/CoplayDev/unity-mcp/discussions) — design ideas and broader questions
-- Security: see [SECURITY.md](SECURITY.md) for private reporting
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md). Branch off `beta`, not `main`. The full dev setup, testing, and release process live in the [Contributing](https://coplaydev.github.io/unity-mcp/contributing/dev-setup) docs.
-
-## Advanced
-
-- **Multiple Unity instances** — [Multi-Instance Routing](https://coplaydev.github.io/unity-mcp/guides/multi-instance)
-- **Tool groups (vfx / animation / ui / testing / etc.)** — [Tool Groups](https://coplaydev.github.io/unity-mcp/guides/tool-groups)
-- **v10 asset generation and upgrade notes** — [v10 Migration](https://coplaydev.github.io/unity-mcp/migrations/v10)
-- **Roslyn script validation** — [Roslyn Validation](https://coplaydev.github.io/unity-mcp/guides/roslyn)
-- **Remote-hosted server with auth** — [Remote Server Auth](https://coplaydev.github.io/unity-mcp/guides/remote-server-auth)
-
-## Star History
-
-[![Star History Chart](https://star-history.dera.page/svg?repos=CoplayDev/unity-mcp&type=Date)](https://star-history.dera.page/#CoplayDev/unity-mcp&Date)
-
-## Citation
-
-If MCP for Unity helped your research, please cite it.
-
-```bibtex
-@inproceedings{wu2025mcpunity,
-  author    = {Wu, Shutong and Barnett, Justin P.},
-  title     = {{MCP-Unity}: {Protocol-Driven} Framework for Interactive {3D} Authoring},
-  year      = {2025},
-  isbn      = {9798400721366},
-  publisher = {Association for Computing Machinery},
-  address   = {New York, NY, USA},
-  url       = {https://doi.org/10.1145/3757376.3771417},
-  doi       = {10.1145/3757376.3771417},
-  series    = {SA Technical Communications '25}
-}
+```powershell
+git clone --branch queue-research-preview https://github.com/tadmilin/unity-mcp-multi-agent-queue.git
+cd unity-mcp-multi-agent-queue
+py -3.13 .\queue\install.py --project "C:\UnityProjects\QueueTest"
 ```
 
-## Unity AI Tools by Aura
+Replace the example path with your test project. To check paths and conflicts first, without writes or downloads:
 
-Aura offers 2 AI tools for Unity:
-- **MCP for Unity** is available freely under the MIT license.
-- **Aura for Unity** is a premium Unity/Unreal AI assistant built for game devs.
+```powershell
+py -3.13 .\queue\install.py --project "C:\UnityProjects\QueueTest" --check
+```
 
-## Disclaimer
+The command creates a private Python environment, installs hash-pinned dependencies, copies the modified Unity package and project tools, initializes the queue, and backs up/updates the Unity package manifest. **It does not start services or Unity.** A successful installation is reported as `installed_pending_unity_validation`.
 
-This project is a free and open-source tool for the Unity Editor, and is not affiliated with Unity Technologies.
+[Installation, startup and failure recovery](queue/docs/installation.md) explains the remaining steps. Use an isolated test project for the first trial.
 
----
+## Documentation
 
-**License:** MIT — see [LICENSE](LICENSE).
+- [Architecture and workflow protocol](queue/README.md)
+- [Installer and service startup](queue/docs/installation.md)
+- [Observed evaluation](queue/docs/evaluation.md)
+- [Tests, skipped experiments and known limits](queue/docs/validation.md)
+- [Upstream README, preserved separately](README.upstream.md)
+
+## Attribution and license
+
+This fork retains CoplayDev's source history and MIT notices. The preview was based on upstream commit `aa5fc638d623f56178d50329d9ad8c541a57fe66`. Upstream code and our queue additions are distinguished in the [source layout and provenance](queue/README.md#provenance-and-license); copied upstream code is not presented as a new contribution.
+
+See [LICENSE](LICENSE), [server license](Server/LICENSE), and [maintained-server license](queue/UnityProject/Tools/UnityNativeObserver/LICENSE). The Unity package ID remains `com.coplaydev.unity-mcp` for compatibility.

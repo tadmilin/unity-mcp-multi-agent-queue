@@ -32,13 +32,17 @@ A coordination extension for multiple AI agents sharing one Unity Editor. This b
 
 For a successful task, inspect `task_verified_success` and the task-specific evidence. A transport success, outer receipt success, or saved prefab alone is insufficient. Failed/abandoned jobs remain failed/abandoned. Automatic uncertain mutation replay and waking an ended AI turn are not qualified.
 
-## Integration outline — not clean-install acceptance
+## Installation command and integration
+
+The repository now provides `py -3.13 queue/install.py --project "C:\UnityProjects\QueueTest"` for a closed, isolated Windows Unity project. Use `--check` for a no-write preflight. See [installation and startup](docs/installation.md) for requirements, failure recovery and the exact validation scope. The command installs files/dependencies and initializes the coordinator; it does not start services or certify Unity behavior.
+
+The outline below explains the components installed by that command. Manual integration remains a separate route.
 
 Use an isolated Windows Unity project for first integration. Keep one selected project per service instance; local endpoints are presently fixed around ports 8080/8091.
 
 1. Add this branch's `MCPForUnity` directory as a local Unity package. It includes changes to upstream command dispatch, so an unmodified upstream package is not equivalent.
 2. Copy the contents of `UnityProject/Tools` to the target project's `Tools`, and `UnityProject/Assets/Editor` to its `Assets/Editor`. Do this during an exclusive maintenance interval with no agent jobs running.
-3. Prepare Windows CPython 3.13 dependencies in a virtual environment. `Tools/UnityWorkflowMcp/requirements-lock.txt` records the wheel hashes used in the original environment. A new dependency download/install has not been tested for this export.
+3. Prepare Windows CPython 3.13 dependencies in a virtual environment. Use `queue/requirements-install-lock.txt` from the repository for the combined workflow/native environment. `Tools/UnityWorkflowMcp/requirements-lock.txt` is retained as the original workflow-only snapshot, not the combined installer lock.
 4. Run `Tools/UnityJobCoordinator/install.py` from the target project using that interpreter. It initializes local queue files; it does not start Unity.
 5. Configure/start the maintained native server from `Tools/UnityNativeObserver/main.py` on loopback 8080 and connect the Unity package to it. Start `Tools/UnityWorkflowMcp/server.py --transport http --port 8091` using the same environment. These are persistent services, not repeated client polling commands.
 6. Verify the actual project identity, capabilities, idle state and a scoped check job before attempting scene/Play work.

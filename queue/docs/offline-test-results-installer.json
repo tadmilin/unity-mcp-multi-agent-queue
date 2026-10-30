@@ -1,0 +1,48 @@
+{
+  "scope": "Offline integration/unit tests with temporary ledgers, fake authorities/HTTP and test-owned process lifetime. No Unity acceptance or fresh installation qualification.",
+  "dependency_source": "current interpreter",
+  "python": "3.13.14",
+  "platform": "win32",
+  "passed": true,
+  "results": [
+    {
+      "suite": "coordinator",
+      "exit_code": 0,
+      "tests": 38,
+      "seconds": 4.082,
+      "log": "......................................\n----------------------------------------------------------------------\nRan 38 tests in 3.261s\n\nOK\n"
+    },
+    {
+      "suite": "workflow",
+      "exit_code": 0,
+      "tests": 207,
+      "seconds": 44.161,
+      "log": ".......Executing <Task pending name='Task-42' coro=<BridgeTests.test_large_observation_history_is_not_returned() running at <checkout>\\queue\\UnityProject\\Tools\\UnityWorkflowMcp\\test_bridge.py:176> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\asyncio\\futures.py:384, Task.task_wakeup()] created at C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\asyncio\\base_events.py:459> cb=[_run_until_complete_cb() at C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\asyncio\\base_events.py:181] created at C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\asyncio\\runners.py:101> took 0.271 seconds\n......Executing <Task pending name='Task-74' coro=<BridgeTests.test_real_sdk_registration_and_error_mapping() running at <checkout>\\queue\\UnityProject\\Tools\\UnityWorkflowMcp\\test_bridge.py:199> cb=[_run_until_complete_cb() at C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\asyncio\\base_events.py:181] created at C:\\Program Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\\Lib\\asyncio\\runners.py:101> took 1.125 seconds\n............................................................ss....................................................................................................................................\n----------------------------------------------------------------------\nRan 207 tests in 29.017s\n\nOK (skipped=2)\n"
+    },
+    {
+      "suite": "native_observer",
+      "exit_code": 0,
+      "tests": 12,
+      "seconds": 2.74,
+      "log": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.379s\n\nOK\n"
+    },
+    {
+      "suite": "test_direct_client.mjs",
+      "exit_code": 0,
+      "seconds": 0.2,
+      "log": "\u2714 one open operation waits at the service; no Unity or poll calls (46.0007ms)\n\u2714 wrong workspace refuses before a mutation can be submitted (2.4714ms)\n\u2714 cancelled observer never replays or cancels the durable job (2.6719ms)\n\u2714 same-key recovery uses result only and parses Streamable HTTP events (2.6028ms)\n\u2714 quarantine and false verification cannot become success (0.8528ms)\n\u2714 invalid input makes no network calls (0.4243ms)\n\u2714 host returns while the same MCP observation waits; collection sends nothing (4.3206ms)\n\u2714 deferred observation retains the failed result key without replay (1.6662ms)\n\u2139 tests 8\n\u2139 suites 0\n\u2139 pass 8\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 70.9353\n"
+    },
+    {
+      "suite": "test_observe_client.mjs",
+      "exit_code": 0,
+      "seconds": 0.152,
+      "log": "\u2714 pending workflow yields before the host deadline without losing its Promise (4.5877ms)\n\u2714 completed quarantine remains a failed job outcome (0.239ms)\n\u2714 observation failure preserves the exact recovery error (0.605ms)\n\u2714 unsafe host budgets are rejected before observing (0.3129ms)\n\u2714 live client seam keeps one MCP operation through a local observation deadline (33.983ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 44.5618\n"
+    },
+    {
+      "suite": "test_client_trace.mjs",
+      "exit_code": 0,
+      "seconds": 0.203,
+      "log": "\u2714 parallel handles retain separate wire traces; local waits send no RPC (71.5848ms)\n\u2139 tests 1\n\u2139 suites 0\n\u2139 pass 1\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 78.4356\n"
+    }
+  ]
+}

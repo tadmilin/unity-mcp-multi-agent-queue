@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-30",
+  "scope": "Windows CPython 3.13 fresh environment in a project-shaped filesystem fixture; no Unity Editor",
+  "installer_tests_passed": 7,
+  "fresh_network_install": true,
+  "require_hashes": true,
+  "pip_cache_used": false,
+  "pip_check_passed": true,
+  "combined_import_check_passed": true,
+  "copied_files_hash_verified": 938,
+  "coordinator_initialized": true,
+  "native_help_exit": 0,
+  "workflow_help_exit": 0,
+  "offline_python_passed": 255,
+  "offline_python_skipped": 2,
+  "javascript_suites_passed": 3,
+  "services_started": false,
+  "unity_started": false,
+  "unity_generated_project": false,
+  "live_unity_acceptance": false,
+  "original_workflow_lock_modified": false,
+  "install_lock_sha256": "3ce248589e1c5369c8c065101207b3bbffd9b1d48e22be70ea29a16db95800e2",
+  "initial_failure": {
+    "status": "failed_before_import_root_writes",
+    "exception": "ModuleNotFoundError: fastapi",
+    "other_evidence": "Original workflow-only lock lacked tomli and pinned mcp 1.26.0 versus native metadata 1.30.0",
+    "regression_test_observed_failing_before_fix": true
+  },
+  "offline_report": "offline-test-results-installer.json",
+  "install_lock_sha256_scope": "Raw bytes used in the fresh Windows installation before Git line-ending normalization",
+  "install_lock_lf_sha256": "cde2394f9914d767fe6c43b4f5d86e7b474c20e60889132f48dc3c458c6ef1ae"
+}
