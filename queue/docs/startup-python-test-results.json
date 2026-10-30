@@ -1,0 +1,35 @@
+{
+  "scope": "Actual exported C# Workflow method compiled under .NET 8 with Unity API stubs and fake HTTP/process-start boundaries. Not a Unity Editor test.",
+  "installed_help_scope": "When selected, the captured ProcessStartInfo runs the real installed Python/server with --help appended; no server listener or worker is started.",
+  "passed": true,
+  "results": [
+    {
+      "case": "offline",
+      "exit_code": 0
+    },
+    {
+      "case": "capabilities",
+      "exit_code": 0
+    },
+    {
+      "case": "online",
+      "exit_code": 0
+    },
+    {
+      "case": "wrong-workspace",
+      "exit_code": 0
+    },
+    {
+      "case": "missing-python",
+      "exit_code": 0
+    },
+    {
+      "case": "missing-server",
+      "exit_code": 0
+    },
+    {
+      "case": "installed-help",
+      "exit_code": 0
+    }
+  ]
+}

@@ -1,5 +1,15 @@
 # Export validation and known limits
 
+## Workflow startup interpreter fix
+
+The exported Unity ingress selected `C:/Python313/python.exe` when the workflow endpoint was unavailable, although the installer creates `.unity-mcp-queue/venv/Scripts/python.exe`. A standalone .NET 8 harness compiles the actual ingress source and invokes its real `Workflow` method, replacing only HTTP/process launch boundaries and Unity/package API surfaces. The pre-fix `offline` case deterministically failed twice with `expected installer venv, got C:/Python313/python.exe`; the already-online and wrong-workspace controls passed. The installed fixture had both the expected interpreter and server, ruling out incomplete installation as the explanation for the wrong selection. The missing-interpreter/server cases also showed attempted launches before the fix.
+
+The fallback now selects the installer environment relative to the project root, checks that the interpreter and script exist, and reports explicit missing-file errors. It keeps quoted script arguments, a project working directory, hidden process startup, workspace validation and same-key recovery guidance. It does not add another interpreter fallback or change endpoint configuration.
+
+Validation: all six C# boundary cases pass. A seventh case used the selected real interpreter/arguments on the existing installed fixture with `--help` appended; it passed without creating a service listener. All seven installer tests were rerun and passed. This does **not** verify live Unity compilation, real network startup, reload behavior or job execution. The earlier 255 Python/3 JavaScript suite results below are historical and were not rerun for this C#-only fix.
+
+See [startup tests](../tests/startup/README.md) and `startup-python-test-results.json`. The source manifest retains the original input hash and updates the exported C# hash. The production game project's copy was not changed. Earlier installation/CLI-help tests missed this path because they started from an explicitly selected Python and did not exercise C# fallback selection.
+
 ## Installer follow-up
 
 The root README now describes this queue extension; the pinned upstream README is preserved separately as `README.upstream.md`. `queue/install.py` adds first-install setup and a no-write `--check` for a closed, isolated Windows Unity project. It preserves other manifest fields, refuses existing installations/locks, records partial failures, and does not start Unity or services.

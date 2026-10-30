@@ -48,6 +48,8 @@ Open the target project in Unity, let import and compilation finish, then connec
 
 These startup instructions describe the intended integration; this installer change has not yet been accepted in a live Unity Editor. It does not configure each AI client or guarantee that an ended agent turn resumes.
 
+If the workflow service is unavailable, the Unity ingress tries to start it with this project's `.unity-mcp-queue/venv/Scripts/python.exe`. It does not use a machine-wide Python fallback. Missing files return `WORKFLOW_PYTHON_MISSING` or `WORKFLOW_SERVER_MISSING`; inspect/repair the installation before continuing. A matching service that is already running is reused. This startup path has [C# regression coverage](../tests/startup/README.md), but still needs live Unity acceptance.
+
 ## Interrupted or failed setup
 
 The command exits nonzero and retains `.unity-mcp-queue/install-result.json` when setup fails after reservation. A dependency failure leaves import roots and the manifest untouched. A later copy/coordinator failure can leave a partial installation; inspect `written_paths` and the manifest backup. A retry refuses existing state instead of silently overwriting it.

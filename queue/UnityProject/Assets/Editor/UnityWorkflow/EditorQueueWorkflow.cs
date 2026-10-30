@@ -63,8 +63,18 @@ namespace ZUnityWorkflow
                         try { reply = await Post(new JObject { ["action"] = "workflow_capabilities" }, cancellation); }
                         catch (HttpRequestException)
                         {
-                            var start = new ProcessStartInfo("C:/Python313/python.exe",
-                                "-B \"" + Path.Combine(Root, "Tools/UnityWorkflowMcp/server.py") + "\" --transport http --port 8091")
+                            // Match queue/install.py's environment in this project.
+                            // Never fall back to a machine-wide Python with different dependencies.
+                            var python = Path.Combine(Root, ".unity-mcp-queue", "venv", "Scripts", "python.exe");
+                            var server = Path.Combine(Root, "Tools", "UnityWorkflowMcp", "server.py");
+                            if (!File.Exists(python))
+                                throw new FileNotFoundException("WORKFLOW_PYTHON_MISSING: expected " + python
+                                    + ". Complete or repair this project's queue installation before starting the service.");
+                            if (!File.Exists(server))
+                                throw new FileNotFoundException("WORKFLOW_SERVER_MISSING: expected " + server
+                                    + ". Restore the queue tools for this project before starting the service.");
+                            var start = new ProcessStartInfo(python,
+                                "-s -B \"" + server + "\" --transport http --port 8091")
                             { WorkingDirectory = Root, UseShellExecute = false, CreateNoWindow = true,
                               WindowStyle = ProcessWindowStyle.Hidden };
                             Process.Start(start);

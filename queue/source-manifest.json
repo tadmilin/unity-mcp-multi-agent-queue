@@ -1351,8 +1351,8 @@
       "source": "Assets/Editor/UnityWorkflow/EditorQueueWorkflow.cs",
       "target": "queue/UnityProject/Assets/Editor/UnityWorkflow/EditorQueueWorkflow.cs",
       "source_sha256": "6d2505ff16611d8815c8fb404e066be640561e76ba04575b32d3266fea0f565a",
-      "export_sha256": "6d2505ff16611d8815c8fb404e066be640561e76ba04575b32d3266fea0f565a",
-      "modified_for_export": false
+      "export_sha256": "e1154dcc72f36685ec2a13b503dca27b34910f23bc12caf1bf198855f20c9ce1",
+      "modified_for_export": true
     },
     {
       "source": "Assets/Editor/UnityWorkflow/EditorQueueWorkflow.cs.meta",
