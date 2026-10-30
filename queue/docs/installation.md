@@ -1,6 +1,10 @@
 # Preview installation
 
-This first-install command targets a **closed, isolated Windows Unity project**. It does not upgrade an existing queue or replace a stock MCP installation. Windows CPython 3.13 is required by the recorded wheel hashes. Use a test project created by Unity, not the source overlay directory.
+Start with the [two install cases in the main README](../../README.md#install): a project without MCP, or a manual switch from the standard CoplayDev Git package. Both use the same command. For the manual switch, remove the old package through Unity's Package Manager in a test copy, then close that Editor before running setup. Do not install our Git URL first and expect this command to continue: any existing MCP dependency causes refusal.
+
+The manual switch is documented from Unity's package-removal behavior and the installer's checks; it has not been tested end to end in Unity. Locally edited/embedded packages and existing queue installations are not covered. There is no automatic upgrade command.
+
+The installer needs **Windows, 64-bit Python 3.13, and a closed Unity project**. Use a test project created by Unity, not the source overlay directory.
 
 ## Command
 
