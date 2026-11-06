@@ -1,0 +1,8 @@
+{
+  "kind": "check",
+  "play": false,
+  "queue_timeout_seconds": 30,
+  "completion_steps": [
+    {"code_file": "check.cs.txt", "expect": "vector-json-ok"}
+  ]
+}

@@ -15,7 +15,7 @@ The queue does not guarantee that an AI session stays alive or resumes after its
 
 ## Install
 
-You need **Windows, Python 3.13 (64-bit), Git, and a Unity project**. Try this on a test project or a copy of your game first. File and Python setup have been tested; setup inside a real Unity Editor is still untested.
+You need **Windows, Python 3.13 (64-bit), Git, and a Unity project**. Start with an isolated test project. The installed layout has passed a basic check, owned Play/cleanup and a C# import in one empty Unity 6000.6.5f1 project. See [recovery and its validation limits](queue/docs/recovery.md); this does not establish a stock/queue performance advantage.
 
 ### Get the files
 
@@ -93,6 +93,7 @@ This check rejects a project that still has MCP installed. It does not test Unit
 
 - [Architecture and workflow protocol](queue/README.md)
 - [Installer and service startup](queue/docs/installation.md)
+- [Writing JSON evidence and submitting a small check](queue/docs/workflow-json.md)
 - [Observed evaluation](queue/docs/evaluation.md)
 - [Tests, skipped experiments and known limits](queue/docs/validation.md)
 - [Upstream README, preserved separately](README.upstream.md)

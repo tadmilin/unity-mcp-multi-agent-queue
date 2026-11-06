@@ -2,7 +2,7 @@
 
 A coordination extension for multiple AI agents sharing one Unity Editor. This branch preserves the CoplayDev source history and adds an Editor gate, durable jobs, bounded scene/Play phases, and a client that can observe a pending job without resubmitting it.
 
-**Status:** source preview. Offline tests and historical local experiments are documented separately. A fresh Unity installation of this exported layout has **not** been validated. Windows-specific notifications and process identity checks are currently required. This is not an official CoplayDev release.
+**Status:** research preview. The installed layout passed scoped check, owned Play/cleanup and C# import qualifications in one empty Unity 6000.6.5f1 project. [Recovery documentation](docs/recovery.md) separates the natural ACK-disconnect result, historical evidence and remaining validation. Windows-specific notifications and process identity checks are currently required. This is not an official CoplayDev release.
 
 ## Source layout
 
@@ -31,6 +31,8 @@ A coordination extension for multiple AI agents sharing one Unity Editor. This b
 `direct_client.mjs` exposes `startWorkflow(...)` and `observeWorkflow(handle, ...)`. Observing an existing handle waits on its existing Promise; it does not send another submission RPC. This does not mean the executor performs no status checks, renewals or cleanup calls.
 
 For a successful task, inspect `task_verified_success` and the task-specific evidence. A transport success, outer receipt success, or saved prefab alone is insufficient. Failed/abandoned jobs remain failed/abandoned. Automatic uncertain mutation replay and waking an ended AI turn are not qualified.
+
+For evidence containing Unity `Vector3` or `Bounds` values, use the explicit `UnityWorkflow.WorkflowJson.Serialize` helper in new snippet code. The [JSON evidence guide](docs/workflow-json.md) includes a small manifest and same-key result recovery instructions. The helper does not rewrite existing jobs or change the scheduler.
 
 ## Installation command and integration
 

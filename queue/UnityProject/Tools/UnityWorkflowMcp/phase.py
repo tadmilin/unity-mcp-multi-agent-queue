@@ -156,6 +156,74 @@ class PhaseWorker(_worker.Worker):
                 raise Uncertain('Command outcome unavailable; no replay or cleanup')
             time.sleep(self.interval)
 
+    def reconcile_ack(self, job, operation, result):
+        # ACK is a receipt compare-and-set, never a replay of the workload.
+        # One supplemental attempt is permitted only after fresh complete proof.
+        deadline = time.monotonic() + self.timeout
+        expected_pid = (getattr(self, 'claim_initial', None) or {}).get('editor', {}).get('pid')
+        expected_token = self.store.get(job)['token']
+        if type(expected_pid) is not int or expected_pid <= 0 or not expected_token:
+            raise Uncertain('Acknowledgement reconciliation origin unavailable')
+        expected_hash = None
+        self.store.event(job, 'ack_reconciliation_started', {'operation': operation})
+
+        def remaining():
+            value = deadline - time.monotonic()
+            if value <= 0:
+                raise Uncertain('Acknowledgement reconciliation deadline exceeded')
+            return value
+
+        def observe():
+            nonlocal expected_hash
+            while True:
+                budget = remaining()
+                if self.client.token != expected_token:
+                    raise Uncertain('Acknowledgement reconciliation token changed')
+                transport = self.client.client
+                previous = transport.timeout
+                try:
+                    transport.timeout = min(previous, budget)
+                    state = self.status(job, owner=True)
+                except _worker.StatusUnavailable:
+                    time.sleep(min(self.interval, remaining()))
+                    continue
+                finally:
+                    transport.timeout = previous
+                remaining()
+                holder, receipt = state.get('holder') or {}, state.get('receipt') or {}
+                receipt_hash = receipt.get('sha256')
+                if (self.client.token != expected_token or
+                        holder.get('ticket') != self.store.get(job)['ticket'] or
+                        holder.get('owner') != 'coordinator-' + job or holder.get('blocked') or
+                        holder.get('deadline', 0) <= time.time() or
+                        state.get('editor', {}).get('pid') != expected_pid or
+                        receipt.get('id') != operation or receipt.get('result') != result or
+                        not isinstance(receipt_hash, str) or not receipt_hash or
+                        (expected_hash is not None and receipt_hash != expected_hash) or
+                        receipt.get('state') not in ('complete', 'acknowledged')):
+                    raise Uncertain('Acknowledgement reconciliation evidence mismatch')
+                expected_hash = receipt_hash
+                return receipt['state']
+
+        if observe() == 'acknowledged':
+            self.store.event(job, 'ack_reconciliation_confirmed', {'operation': operation, 'supplemental_ack': False})
+            return
+        self.store.event(job, 'ack_reconciliation_supplemental', {'operation': operation, 'receipt_hash': expected_hash})
+        transport = self.client.client
+        previous = transport.timeout
+        try:
+            transport.timeout = min(previous, remaining())
+            self.require(self.rpc(job, 'ack', operation=operation))
+        except Exception:
+            # A late original ACK may win the CAS; a lost supplemental reply may
+            # also have committed. Only observation can establish either result.
+            pass
+        finally:
+            transport.timeout = previous
+        if observe() != 'acknowledged':
+            raise Uncertain('Acknowledgement still incomplete after one supplemental attempt')
+        self.store.event(job, 'ack_reconciliation_confirmed', {'operation': operation, 'supplemental_ack': True})
+
     def command(self, job, label, code=None, command='execute_code', parameters=None):
         operation = job + '-' + label
         parameters = parameters if parameters is not None else {'action': 'execute', 'code': code}
@@ -171,10 +239,7 @@ class PhaseWorker(_worker.Worker):
         try:
             self.require(self.rpc(job, 'ack', operation=operation))
         except Exception:
-            state = self.wait_status(job, owner=True)
-            receipt = state.get('receipt') or {}
-            if receipt.get('id') != operation or receipt.get('state') != 'acknowledged':
-                raise Uncertain('Acknowledgement unavailable; inspect receipt') from None
+            self.reconcile_ack(job, operation, inner)
         self.safe = True
         if inner.get('success') is not True:
             raise CheckFailed(command_failure(inner))
@@ -268,11 +333,8 @@ class PhaseWorker(_worker.Worker):
             if manifest['play']:
                 # This marker survives domain reload, and can only be set in our held phase.
                 play_marked = True
-                self.code(job, 'start-play',
-                    'if(UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode) throw new System.Exception("Already playing"); '
-                    'if(UnityEditor.SceneManagement.EditorSceneManager.GetActiveScene().isDirty) throw new System.Exception("Scene dirty"); '
-                    'UnityEditor.SessionState.SetString("UnityWorkflow.PlayOwner", ' + json.dumps(job)
-                    + '); UnityEditor.EditorApplication.isPlaying=true; return "start-requested";')
+                self.command(job, 'start-play', command='workflow_play',
+                    parameters={'action': 'start', 'job': job})
                 self.wait_editor(job, lambda e: e['playing'] and not e['compiling'] and not e['updating'])
                 self.check_steps(job, 'play', manifest['play_steps'])
                 self.delay(job, manifest['play_seconds'])
@@ -292,10 +354,8 @@ class PhaseWorker(_worker.Worker):
                 state = self.wait_status(job, owner=True)
                 if play_marked:
                     # Atomic marker/ownership check and Stop, not an unowned global Stop.
-                    self.code(job, 'stop-owned-play',
-                        'if(UnityEditor.SessionState.GetString("UnityWorkflow.PlayOwner", "")!=' + json.dumps(job)
-                        + ') throw new System.Exception("Play owner mismatch"); '
-                        'UnityEditor.EditorApplication.isPaused=false; UnityEditor.EditorApplication.isPlaying=false; return "stop-requested";')
+                    self.command(job, 'stop-owned-play', command='workflow_play',
+                        parameters={'action': 'stop', 'job': job})
                     state = self.wait_editor(job, lambda e: not e['playing'] and not e['changing'] and not e['compiling'] and not e['updating'])
                     self.code(job, 'clear-play-owner', 'UnityEditor.SessionState.EraseString("UnityWorkflow.PlayOwner"); return "cleared";')
                 elif state['editor']['playing'] or state['editor']['changing']:

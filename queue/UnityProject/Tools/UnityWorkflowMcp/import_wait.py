@@ -15,12 +15,16 @@ from pathlib import Path
 import re
 import time
 
-VERSION = 'checked-import-notification-v2-preserved-session'
+VERSION = 'checked-import-notification-v3-reconnect-confirmation'
 _BOOT = re.compile(r'(\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d)(?:\.(\d{1,7}))?Z')
 LOADED_SHA256 = sha256(Path(__file__).read_bytes()).hexdigest()
 
 
 class ImportWaitError(RuntimeError):
+    pass
+
+
+class ImportConfirmationUnavailable(ImportWaitError):
     pass
 
 
@@ -118,6 +122,7 @@ class ImportWait:
         self.native_path = self.root / 'Library/UnityWorkflowSignals/native-connected.json'
         self.changes = changes([self.gate_path.parent, self.native_path.parent])
         self.reads, self.wakes = 0, 0
+        self.confirmation_attempts = 0
         self.receipt_hash = None
         try:
             self.connection = validate_connection(self.changes.read(self.native_path), self.root)
@@ -176,9 +181,12 @@ class ImportWait:
                             time.monotonic() + holder['deadline'] - time.time())
 
     def wait(self):
+        attempted_connection = None
+        unavailable = False
         while True:
             if time.monotonic() >= self.deadline:
-                raise ImportWaitError('Import notification deadline exceeded; no replay')
+                raise ImportWaitError('Import confirmation unavailable; reconnect deadline exceeded' if unavailable
+                                      else 'Import notification deadline exceeded; no replay')
             try:
                 holder, current = self.snapshot()
                 connection = validate_connection(self.changes.read(self.native_path), self.root)
@@ -199,15 +207,32 @@ class ImportWait:
             # complete gate snapshot can wake one live authority confirmation;
             # it is never acceptance. confirm() still requires a changed Unity
             # boot for script imports and verifies receipt, owner, PID and idle.
-            if (current['state'] == 'complete' or
-                    (self.reload and reconnected and current['state'] == 'reloading')):
+            connection_generation = (connection['session_id'], connection.get('connected_unix'))
+            if (connection_generation != attempted_connection and
+                    (current['state'] == 'complete' or
+                     (self.reload and reconnected and current['state'] == 'reloading'))):
                 self.worker.store.event(self.job, 'import_wait_notified', {
                     'operation': self.operation, 'ticket': self.ticket, 'requires_reload': self.reload,
                     'state': current['state'], 'notification_wakes': self.wakes, 'snapshot_reads': self.reads,
                     'session_changed': reconnected})
-                return self.confirm()
+                attempted_connection = connection_generation
+                try:
+                    return self.confirm()
+                except ImportConfirmationUnavailable:
+                    # Gate completion may precede native registration after reload.
+                    # Retry only the read-only confirmation on a NEW connection event;
+                    # never retry on timer, unrelated file changes, or a live mismatch.
+                    unavailable = True
+                    self.worker.store.event(self.job, 'import_confirmation_wait_reconnect',
+                                            {'operation': self.operation})
+                    continue  # Re-read before sleeping: registration may already have arrived.
             # Only an OS change event or the fixed deadline can resume this wait.
-            self.changes.wait(self.deadline)
+            try:
+                self.changes.wait(self.deadline)
+            except ImportWaitError:
+                if unavailable:
+                    raise ImportConfirmationUnavailable('Import confirmation unavailable; reconnect deadline exceeded') from None
+                raise
             self.wakes += 1
 
     def confirm(self):
@@ -217,15 +242,18 @@ class ImportWait:
             raise ImportWaitError('Import confirmation deadline exceeded')
         transport = worker.client.client
         previous_timeout = transport.timeout
-        worker.store.event(self.job, 'import_confirmation_intent', {'operation': self.operation})
+        self.confirmation_attempts += 1
+        worker.store.event(self.job, 'import_confirmation_intent', {
+            'operation': self.operation, 'attempt': self.confirmation_attempts})
         try:
             transport.timeout = min(previous_timeout, remaining)
             response = worker.client.call('status', token=worker.client.token)
         finally:
             transport.timeout = previous_timeout
         if not isinstance(response, dict) or response.get('success') is not True:
-            worker.store.event(self.job, 'import_confirmation_unavailable', {'operation': self.operation})
-            raise ImportWaitError('Import confirmation unavailable; no polling or replay')
+            worker.store.event(self.job, 'import_confirmation_unavailable', {
+                'operation': self.operation, 'attempt': self.confirmation_attempts})
+            raise ImportConfirmationUnavailable('Import confirmation unavailable; awaiting native connection event')
         state = response['data']
         worker.store.event(self.job, 'status', state)
         holder, receipt, current = state.get('holder') or {}, state.get('receipt') or {}, state.get('import') or {}
@@ -242,5 +270,5 @@ class ImportWait:
                 state.get('editor', {}).get('pid') != self.initial.get('editor', {}).get('pid')):
             raise ImportWaitError('Live import confirmation mismatch; no replay or cleanup')
         worker.store.event(self.job, 'import_wait_confirmed', {'operation': self.operation,
-                           'ticket': self.ticket, 'bootUtc': state['bootUtc'], 'status_rpc_count': 1})
+                           'ticket': self.ticket, 'bootUtc': state['bootUtc'], 'status_rpc_count': self.confirmation_attempts})
         return state

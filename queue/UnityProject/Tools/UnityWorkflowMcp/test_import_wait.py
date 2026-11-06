@@ -161,6 +161,89 @@ class ImportWaitTests(unittest.TestCase):
             observation.wait()
         self.assertEqual(self.calls, ['status'])
 
+    def reconnect_during_confirmation(self, change=None):
+        observation = self.observer()
+        self.complete()
+        live = copy.deepcopy(self.live)
+        def call(action, **parameters):
+            self.calls.append(action)
+            self.assertEqual({'token': 'own-secret'}, parameters)
+            if len(self.calls) == 1:
+                self.connection['session_id'] = 'reconnected'
+                self.connection['connected_unix'] = 123.0
+                if change:
+                    change(observation, live)
+                self.write(self.gate, self.state)
+                self.write(self.native, self.connection)
+                return {'success': False, 'error': 'Disconnected'}
+            return live
+        self.worker.client.call = call
+        return observation
+
+    def test_completed_import_reconfirms_only_after_new_connection(self):
+        observation = self.reconnect_during_confirmation()
+        self.assertTrue(observation.wait()['editor']['idle'])
+        self.assertEqual(['status', 'status'], self.calls)
+        confirmed = [data for kind, data in self.events if kind == 'import_wait_confirmed']
+        self.assertEqual(2, confirmed[-1]['status_rpc_count'])
+        self.assertEqual(30, self.worker.client.client.timeout)
+
+    def test_new_registration_with_preserved_session_reconfirms(self):
+        def preserve_session(observation, live):
+            self.connection['session_id'] = 'new'
+        observation = self.reconnect_during_confirmation(preserve_session)
+        self.assertTrue(observation.wait()['editor']['idle'])
+        self.assertEqual(['status', 'status'], self.calls)
+        notified = [data for kind, data in self.events if kind == 'import_wait_notified']
+        self.assertEqual(2, len(notified))
+
+    def test_rewritten_unchanged_registration_does_not_retry(self):
+        def unchanged_registration(observation, live):
+            self.connection['session_id'] = 'new'
+            self.connection.pop('connected_unix', None)
+            observation.deadline = time.monotonic() + .05
+        observation = self.reconnect_during_confirmation(unchanged_registration)
+        with self.assertRaisesRegex(ImportWaitError, 'deadline'):
+            observation.wait()
+        self.assertEqual(['status'], self.calls)
+
+    def test_reconnect_changed_disk_owner_or_receipt_is_not_accepted(self):
+        # Subtests each get independent snapshots and a fresh original receipt.
+        for change in ('owner', 'receipt', 'native_epoch'):
+            with self.subTest(change=change):
+                self.calls.clear()
+                self.state['holder']['owner'] = 'coordinator-job'
+                self.state['holder']['operation']['sha256'] = 'own-write-digest'
+                self.state['import']['state'] = 'staged'
+                self.connection['epoch'] = 'same-process'
+                self.connection['session_id'] = 'old'
+                self.write(self.gate, self.state)
+                self.write(self.native, self.connection)
+                def mutate(observation, live):
+                    if change == 'owner': self.state['holder']['owner'] = 'foreign'
+                    elif change == 'receipt': self.state['holder']['operation']['sha256'] = 'foreign'
+                    else: self.connection['epoch'] = 'foreign'
+                observation = self.reconnect_during_confirmation(mutate)
+                with self.assertRaises(ImportWaitError):
+                    observation.wait()
+                self.assertEqual(['status'], self.calls)
+
+    def test_reconnect_live_receipt_mismatch_is_not_retried(self):
+        def mutate(observation, live):
+            live['data']['receipt']['sha256'] = 'foreign'
+        observation = self.reconnect_during_confirmation(mutate)
+        with self.assertRaisesRegex(ImportWaitError, 'mismatch'):
+            observation.wait()
+        self.assertEqual(['status', 'status'], self.calls)
+
+    def test_reconnect_cannot_extend_original_deadline(self):
+        def mutate(observation, live):
+            observation.deadline = time.monotonic() - .01
+        observation = self.reconnect_during_confirmation(mutate)
+        with self.assertRaisesRegex(ImportWaitError, 'deadline'):
+            observation.wait()
+        self.assertEqual(['status'], self.calls)
+
     def test_live_confirmation_rejects_wrong_boot_receipt_pid_idle(self):
         for case in ('boot', 'receipt', 'pid', 'idle', 'ticket'):
             with self.subTest(case=case):

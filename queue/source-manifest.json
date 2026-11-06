@@ -91,8 +91,8 @@
       "source": "Tools/UnityWorkflowMcp/import_wait.py",
       "target": "queue/UnityProject/Tools/UnityWorkflowMcp/import_wait.py",
       "source_sha256": "8403fba401631ca423e74542d8231e868b4d41d96fdccce454c8600548f9da3e",
-      "export_sha256": "8403fba401631ca423e74542d8231e868b4d41d96fdccce454c8600548f9da3e",
-      "modified_for_export": false
+      "export_sha256": "4d5bd64c1dfc23545d2d1cc9586aa5baee27fec5a4cdf2bac8a5c7a7a6ce563a",
+      "modified_for_export": true
     },
     {
       "source": "Tools/UnityWorkflowMcp/initial_wait.py",
@@ -119,8 +119,8 @@
       "source": "Tools/UnityWorkflowMcp/phase.py",
       "target": "queue/UnityProject/Tools/UnityWorkflowMcp/phase.py",
       "source_sha256": "da5d83bb7bb9af68abe31d9d30603462a0eb19aa50bee57cd183048ec68fa442",
-      "export_sha256": "83f2a5cd262d018281f1a30c03018946bbab8ec09f4bdfdfabe52acc15e360f7",
-      "modified_for_export": false
+      "export_sha256": "62b88113670136c2d3ce61649f376e490e97aa2d25a5993e93e17651ebec26e7",
+      "modified_for_export": true
     },
     {
       "source": "Tools/UnityWorkflowMcp/recovery.py",
@@ -217,8 +217,8 @@
       "source": "Tools/UnityWorkflowMcp/test_import_wait.py",
       "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_import_wait.py",
       "source_sha256": "f587e17a958bc9ff7a8c3ec18a19ad38dcdee951b46985c3ce7e55758350dfb1",
-      "export_sha256": "7043658b9159203b3b378979f14aa6ac4595f50038adb75093139c8df52bb8db",
-      "modified_for_export": false
+      "export_sha256": "6a62678416220f8e98b95477fb5ebdd83b610d7e27ed916948322adb1769236b",
+      "modified_for_export": true
     },
     {
       "source": "Tools/UnityWorkflowMcp/test_initial_wait.py",
@@ -245,8 +245,8 @@
       "source": "Tools/UnityWorkflowMcp/test_phase.py",
       "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_phase.py",
       "source_sha256": "6a125a215dfc7165ef1e3848a470df878518b7bb543206302f4c7236bb599a99",
-      "export_sha256": "090199c00433b46f5b0ea7e2f3bf8cdc76bdee6cbe3f2bfcc98e9c86da1e4ca2",
-      "modified_for_export": false
+      "export_sha256": "36138bff3489b5b5e4e22e1963c8f86657e487a0464a11114edfee529571c1fa",
+      "modified_for_export": true
     },
     {
       "source": "Tools/UnityWorkflowMcp/test_preserved_session.py",
@@ -259,8 +259,8 @@
       "source": "Tools/UnityWorkflowMcp/test_recovery.py",
       "target": "queue/UnityProject/Tools/UnityWorkflowMcp/test_recovery.py",
       "source_sha256": "e7bed09ff8d0c74ecf01fcbf71eb1eb6126e5d7eefffce8c0c556903eb2b2287",
-      "export_sha256": "e7bed09ff8d0c74ecf01fcbf71eb1eb6126e5d7eefffce8c0c556903eb2b2287",
-      "modified_for_export": false
+      "export_sha256": "1deecc3f8b00c1ccdfef53081e4d7048c3df83f6163f69eb473e28ef993f12c6",
+      "modified_for_export": true
     },
     {
       "source": "Tools/UnityWorkflowMcp/test_unmarked_play_recovery.py",
@@ -1366,6 +1366,38 @@
       "target": "queue/UnityProject/Tools/UnityReloadDiagnostics/observe_reload.py",
       "source_sha256": "7221adc55018220b6d444cedb1ce62d2905e488d4f201e02d97a746ca5565002",
       "export_sha256": "7221adc55018220b6d444cedb1ce62d2905e488d4f201e02d97a746ca5565002",
+      "modified_for_export": false
+    },
+    {
+      "source": "queue/UnityProject/Assets/Editor/UnityWorkflow/WorkflowJson.cs",
+      "target": "queue/UnityProject/Assets/Editor/UnityWorkflow/WorkflowJson.cs",
+      "source_origin": "Authored in this repository; not copied from the historical experiment",
+      "source_sha256": "d4f6fc3480f7d2737485d457a977da4454ed753c0737ab479dbd0dac139a11c0",
+      "export_sha256": "d4f6fc3480f7d2737485d457a977da4454ed753c0737ab479dbd0dac139a11c0",
+      "modified_for_export": false
+    },
+    {
+      "source": "queue/UnityProject/Assets/Editor/UnityWorkflow/WorkflowJson.cs.meta",
+      "target": "queue/UnityProject/Assets/Editor/UnityWorkflow/WorkflowJson.cs.meta",
+      "source_origin": "Authored in this repository; not copied from the historical experiment",
+      "source_sha256": "abe9b6dd77b58393bdbc32d8c1a1edd26166b28dc708be309547bbb291002394",
+      "export_sha256": "abe9b6dd77b58393bdbc32d8c1a1edd26166b28dc708be309547bbb291002394",
+      "modified_for_export": false
+    },
+    {
+      "source": "queue/UnityProject/Assets/Editor/UnityWorkflow/WorkflowPlay.cs",
+      "target": "queue/UnityProject/Assets/Editor/UnityWorkflow/WorkflowPlay.cs",
+      "source_origin": "Authored in this repository; not copied from the historical experiment",
+      "source_sha256": "b1f423f3352e90078a1f0f6205d816d5a0eb9438e27734a6c91f15a1305cdef9",
+      "export_sha256": "b1f423f3352e90078a1f0f6205d816d5a0eb9438e27734a6c91f15a1305cdef9",
+      "modified_for_export": false
+    },
+    {
+      "source": "queue/UnityProject/Assets/Editor/UnityWorkflow/WorkflowPlay.cs.meta",
+      "target": "queue/UnityProject/Assets/Editor/UnityWorkflow/WorkflowPlay.cs.meta",
+      "source_origin": "Authored in this repository; not copied from the historical experiment",
+      "source_sha256": "30163a2eb5c7d4135690d1c183054835b4c12e864f821271f288b14a4390e670",
+      "export_sha256": "30163a2eb5c7d4135690d1c183054835b4c12e864f821271f288b14a4390e670",
       "modified_for_export": false
     }
   ],

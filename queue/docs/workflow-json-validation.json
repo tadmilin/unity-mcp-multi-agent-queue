@@ -1,0 +1,81 @@
+{
+  "scope": "Actual helper executed in Unity Editor batch mode in an isolated project. No MCP, agents, workflow execution or speedup test.",
+  "passed": true,
+  "results": [
+    {
+      "name": "right-baseline",
+      "success": true,
+      "detail": "Self referencing loop detected for property 'normalized' with type 'UnityEngine.Vector3'. Path 'right.normalized.normalized.normalized'."
+    },
+    {
+      "name": "right-helper",
+      "success": true,
+      "detail": {
+        "x": 0.25,
+        "y": 1.5,
+        "z": -2.0
+      }
+    },
+    {
+      "name": "scale-baseline",
+      "success": true,
+      "detail": "Self referencing loop detected for property 'normalized' with type 'UnityEngine.Vector3'. Path 'scale.normalized.normalized.normalized'."
+    },
+    {
+      "name": "scale-helper",
+      "success": true,
+      "detail": {
+        "x": 0.25,
+        "y": 1.5,
+        "z": -2.0
+      }
+    },
+    {
+      "name": "transforms-baseline",
+      "success": true,
+      "detail": "Self referencing loop detected for property 'normalized' with type 'UnityEngine.Vector3'. Path 'transforms[0].world.normalized.normalized.normalized'."
+    },
+    {
+      "name": "transforms-helper",
+      "success": true,
+      "detail": {
+        "x": 0.25,
+        "y": 1.5,
+        "z": -2.0
+      }
+    },
+    {
+      "name": "nested-bounds",
+      "success": true,
+      "detail": null
+    },
+    {
+      "name": "ordinary-dto-and-array",
+      "success": true,
+      "detail": null
+    },
+    {
+      "name": "null-root",
+      "success": true,
+      "detail": null
+    },
+    {
+      "name": "decimal-culture",
+      "success": true,
+      "detail": null
+    },
+    {
+      "name": "unrelated-cycle-still-rejected",
+      "success": true,
+      "detail": null
+    },
+    {
+      "name": "global-settings-isolation",
+      "success": true,
+      "detail": null
+    }
+  ],
+  "runtime": "Unity 6000.6.5f1, isolated batch project",
+  "source_sha256": "d4f6fc3480f7d2737485d457a977da4454ed753c0737ab479dbd0dac139a11c0",
+  "qualification": "Serialization helper only. Queue/live MCP integration and management speedup not established by this receipt."
+}

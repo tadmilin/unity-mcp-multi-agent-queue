@@ -76,3 +76,7 @@ docs/superpowers/
 
 # Reference DLLs fetched by tools/compile-check.sh (not redistributable)
 .compile-refs/
+
+# Local .NET regression build outputs
+queue/tests/**/bin/
+queue/tests/**/obj/

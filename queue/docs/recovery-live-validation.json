@@ -1,0 +1,90 @@
+{
+  "schema": "recovery-qualification-summary-v1",
+  "unity": "6000.6.5f1",
+  "platform": "Windows",
+  "ack_qualification": {
+    "schema": "bounded-ack-recovery-live-v1",
+    "job_id": "d5651545b05e4be7ae848447098c6d22",
+    "unity_version": "6000.6.5f1",
+    "fixture": "Empty project; two one-cube scenes; one-second owned Preview",
+    "phase_sha256": "62b88113670136c2d3ce61649f376e490e97aa2d25a5993e93e17651ebec26e7",
+    "failure": "Native session disconnected before start-Play ACK committed",
+    "before_fix": "Same fixture failed with complete unacknowledged receipt and was quarantined; later operator cleanup recorded as abandoned, never success",
+    "after_fix": {
+      "state": "succeeded",
+      "task_verified_success": true,
+      "scene_restored": true,
+      "play_stopped": true,
+      "release_confirmed": true,
+      "workload_execute_counts": {
+        "start-play": 1,
+        "stop-owned-play": 1
+      },
+      "start_play_ack_attempts": 2,
+      "supplemental_ack_attempts": 1,
+      "reconciliation_started_to_confirmed_seconds": 10.368294,
+      "failed_ack_response_to_confirmed_seconds": 10.370692,
+      "started_to_finished_seconds": 22.856169
+    },
+    "qualification_limits": [
+      "One naturally occurring ACK disconnect after fix; not an SLA or causal stock comparison.",
+      "Before/after have same fixture, but connection/cache/setup histories differ.",
+      "Post-fix submission waited while operator resolved the earlier failed job; client observation timed out, terminal result retrieved with same key. Do not use queue/client total as recovery latency.",
+      "Once the post-fix job started, it completed without operator intervention.",
+      "ACK compare-and-set updates only receipt metadata; no repeated start/stop workload.",
+      "Model tokens were not measured."
+    ]
+  },
+  "import_qualification": {
+    "submission_key": "recovery-qualification-20261107-r1",
+    "state": "succeeded",
+    "normal_import_checks_passed": true,
+    "before_sha256": "missing",
+    "after_sha256": "e48765fc962f8bfc48c4e51a6cf4addb4a18376b9fe46152992a9da9c527f449",
+    "expected_after_sha256": "e48765fc962f8bfc48c4e51a6cf4addb4a18376b9fe46152992a9da9c527f449",
+    "mutation_intents": {
+      "write_files": 1,
+      "import": 1
+    },
+    "release_confirmed": true,
+    "import_wait_version": "checked-import-notification-v3-reconnect-confirmation",
+    "boot_before": "2026-11-06T22:06:27.2891772Z",
+    "boot_after": "2026-11-06T22:07:35.7525528Z",
+    "confirmation_rpc_count": 1,
+    "unavailable_confirmation_events": 0,
+    "recovery_timing_verified": false,
+    "unavailable_to_confirmed_seconds": [],
+    "event_counts": {
+      "initial_readiness_armed": 1,
+      "initial_readiness_ready": 1,
+      "intent": 13,
+      "response": 13,
+      "claim_wait_armed": 1,
+      "claim_wait_confirmed": 1,
+      "status": 5,
+      "import_wait_armed": 1,
+      "import_recovery_origin": 1,
+      "import_recovery_staged": 1,
+      "import_wait_notified": 1,
+      "import_confirmation_intent": 1,
+      "import_wait_confirmed": 1,
+      "check": 1
+    },
+    "limitation": "Natural import qualification; no injected failure. Normal import success alone does not test reconfirmation recovery or cleanup routes."
+  },
+  "offline_validation": {
+    "focused_phase_import_recovery_tests": 109,
+    "passed": 109,
+    "installer_tests_passed": 8
+  },
+  "review_findings": [
+    "Corrected invalid WorkflowPlay metadata GUID; successful build exit alone did not prove script import.",
+    "Batch qualification was rejected by existing Editor identity guard; test used normal Editor without changing guard.",
+    "Raw initial failure and operator cleanup evidence were retained; abandoned trial is not counted as success."
+  ],
+  "limits": [
+    "Not a stock comparison or token measurement.",
+    "Normal import passed but did not encounter unavailable confirmation.",
+    "No broad game-project validation or new autonomous quarantined cleanup validation."
+  ]
+}

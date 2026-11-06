@@ -36,7 +36,7 @@ class RecoveryAuthority(Authority):
             data['editor'].update(dirty=self.dirty, changing=self.changing)
             data['editor']['idle'] = not (self.playing or self.peer or self.dirty or self.changing)
             data['import'] = None
-        if action == 'execute' and 'isPlaying=false' in code:
+        if action == 'execute' and ('isPlaying=false' in code or (p['command'] == 'workflow_play' and p['parameters']['action'] == 'stop')):
             self.receipt['result']['data']['result'] = 'stop-requested'
         if action == 'execute' and 'recovery marker' in code:
             self.receipt['result']['data']['result'] = 'owned'

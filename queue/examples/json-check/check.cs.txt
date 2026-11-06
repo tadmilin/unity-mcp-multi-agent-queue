@@ -1,0 +1,8 @@
+var position = new UnityEngine.Vector3(0.25f, 1.5f, -2f);
+var text = UnityWorkflow.WorkflowJson.Serialize(new { position = position });
+var result = Newtonsoft.Json.Linq.JObject.Parse(text);
+if ((float)result["position"]["x"] != position.x ||
+    (float)result["position"]["y"] != position.y ||
+    (float)result["position"]["z"] != position.z)
+    throw new System.Exception("Vector values changed");
+return "vector-json-ok";

@@ -1,5 +1,6 @@
 """Installer boundaries and file integration; no Editor or service is started."""
 import json
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -13,6 +14,19 @@ import install
 
 @unittest.skipUnless(sys.platform == 'win32', 'Windows installer')
 class InstallTests(unittest.TestCase):
+    def test_workflow_script_metadata_has_valid_unique_guids(self):
+        # Unity may exit successfully while silently skipping a script whose
+        # .meta GUID is malformed. Compiler-only checks do not cover this.
+        scripts = install.REPO / 'queue/UnityProject/Assets/Editor'
+        seen = set()
+        for source in scripts.rglob('*.cs'):
+            with self.subTest(script=str(source.relative_to(scripts))):
+                text = source.with_suffix('.cs.meta').read_text(encoding='utf-8-sig')
+                match = re.search(r'^guid: ([0-9a-f]{32})\s*$', text, re.MULTILINE)
+                self.assertIsNotNone(match, 'Unity requires exactly 32 hexadecimal GUID characters')
+                self.assertNotIn(match.group(1), seen)
+                seen.add(match.group(1))
+
     def test_install_lock_covers_native_server_metadata(self):
         def pins(path):
             result = set()

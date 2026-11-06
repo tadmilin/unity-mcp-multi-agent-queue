@@ -17,6 +17,8 @@ class Authority:
     def __init__(self):
         self.client = SimpleNamespace(timeout=30)
         self.token = None
+        self.owner = None
+        self.deadline = time.time() + 1800
         self.peer = True
         self.owned = False
         self.playing = False
@@ -37,11 +39,12 @@ class Authority:
             if self.receipt and self.pending_reads:
                 self.pending_reads -= 1
                 self.receipt['state'] = 'pending' if self.pending_reads else 'complete'
-            return {'success': True, 'data': {'holder': {'ticket': 1} if self.owned else ({'ticket': 999} if self.peer else None),
+            return {'success': True, 'data': {'holder': {'ticket': 1, 'owner': self.owner, 'deadline': self.deadline} if self.owned else ({'ticket': 999} if self.peer else None),
                 'receipt': self.receipt, 'editor': {'playing': self.playing or self.peer, 'changing': False,
-                    'compiling': False, 'updating': False, 'idle': not (self.playing or self.peer),
+                    'pid': 777, 'compiling': False, 'updating': False, 'idle': not (self.playing or self.peer),
                     'dirty': False, 'scene': 'Assets/Original.unity'}}}
         if action == 'request':
+            self.owner = p['owner']
             self.token = 'test-secret'
             return {'success': True, 'data': {'ticket': 1, 'token': self.token}}
         if action == 'claim':
@@ -57,16 +60,19 @@ class Authority:
                 raise AssertionError('Peer ownership violated')
             operation = p['operation']
             code = p['parameters'].get('code', '')
+            play = p['parameters'].get('action') if p['command'] == 'workflow_play' else None
+            if play == 'start':
+                self.marker = p['parameters']['job']
             if 'SetString("UnityWorkflow.PlayOwner"' in code:
                 self.marker = operation.split('-')[0]
-            if 'isPlaying=true' in code:
+            if play == 'start' or 'isPlaying=true' in code:
                 self.playing = True
-            if 'isPlaying=false' in code:
-                if not self.marker:
+            if play == 'stop' or 'isPlaying=false' in code:
+                if not self.marker or (play == 'stop' and self.marker != p['parameters']['job']):
                     raise AssertionError('Unowned Stop')
                 self.playing = False
             inner = {'success': True, 'data': [] if p['command'] == 'read_console' else {'result': 'ok'}}
-            self.receipt = {'id': operation, 'state': 'complete', 'result': inner}
+            self.receipt = {'id': operation, 'state': 'complete', 'result': inner, 'sha256': 'test-receipt-hash'}
             if self.lose_execute and operation.endswith(self.lose_execute):
                 if self.incomplete:
                     self.receipt['state'] = 'unknown'
@@ -132,6 +138,21 @@ class PhaseTests(unittest.TestCase):
         self.assertIsNone(self.store.get(job)['token'])
         self.assertEqual(job, self.bridge.submit('stable-key', 'phase.json'))
 
+    def test_play_transitions_use_parameterized_tool_and_ack_receipts(self):
+        self.authority.peer = False
+        job = self.submit()
+        result = self.process(job)
+        self.assertTrue(result['verified_success'])
+        calls = self.authority.calls
+        for label, action in [('start-play', 'start'), ('stop-owned-play', 'stop')]:
+            matches = [(index, p) for index, (kind, p) in enumerate(calls)
+                       if kind == 'execute' and p['operation'] == job + '-' + label]
+            self.assertEqual(1, len(matches))
+            index, request = matches[0]
+            self.assertEqual('workflow_play', request['command'])
+            self.assertEqual({'action': action, 'job': job}, request['parameters'])
+            self.assertEqual(('ack', {'operation': job + '-' + label}), calls[index + 1])
+
     def test_lost_terminal_response_recovered_without_replay(self):
         self.authority.peer = False
         self.authority.lose_execute = 'start-play'
@@ -147,7 +168,7 @@ class PhaseTests(unittest.TestCase):
         result = self.process(job)
         self.assertEqual('quarantined', result['state'])
         self.assertTrue(self.authority.owned)
-        self.assertFalse(any(a == 'release' or 'isPlaying=false' in p.get('parameters', {}).get('code', '') for a, p in self.authority.calls))
+        self.assertFalse(any(a == 'release' or (a == 'execute' and p['operation'].endswith('stop-owned-play')) or 'isPlaying=false' in p.get('parameters', {}).get('code', '') for a, p in self.authority.calls))
         self.assertIsNotNone(self.store.get(job)['token'])
 
     def test_returned_transport_error_recovers_terminal_receipt_without_replay(self):
@@ -234,3 +255,139 @@ if __name__ == '__main__':
     args.output.write_text(json.dumps({'passed': result.wasSuccessful(), 'tests': result.testsRun,
         'failures': [str(x) for x in result.failures], 'errors': [str(x) for x in result.errors]}, indent=2))
     raise SystemExit(not result.wasSuccessful())
+
+
+class AckReconciliationTests(unittest.TestCase):
+    setUp = PhaseTests.setUp
+    tearDown = PhaseTests.tearDown
+    submit = PhaseTests.submit
+    process = PhaseTests.process
+
+    def configure(self, mode='complete', mismatch=None):
+        self.authority.peer = False
+        original = self.authority.call
+        self.ack_attempts = 0
+        self.ack_timeouts = []
+        def call(action, **p):
+            if action == 'ack' and p['operation'].endswith('start-play'):
+                self.ack_attempts += 1
+                self.ack_timeouts.append(self.authority.client.timeout)
+                if self.ack_attempts == 1:
+                    if mode == 'already_committed': original(action, **p)
+                    else: self.authority.calls.append((action, p))
+                    return {'success': False, 'error': 'Disconnected'}
+                if mode == 'still_complete':
+                    self.authority.calls.append((action, p))
+                    return {'success': False, 'error': 'Disconnected'}
+                if mode == 'late_original':
+                    self.authority.receipt['state'] = 'acknowledged'
+                    self.authority.calls.append((action, p))
+                    return {'success': False, 'error': 'EDITOR_QUEUE_TERMINAL_RECEIPT_REQUIRED'}
+                answer = original(action, **p)
+                if mode == 'supplemental_reply_lost':
+                    raise OSError('Supplemental response lost')
+                return answer
+            answer = original(action, **p)
+            if action == 'status' and self.ack_attempts and mismatch:
+                answer = json.loads(json.dumps(answer))
+                data = answer['data']
+                if mismatch == 'owner': data['holder']['owner'] = 'foreign'
+                elif mismatch == 'ticket': data['holder']['ticket'] = 999
+                elif mismatch == 'pid': data['editor']['pid'] = 888
+                elif mismatch == 'operation': data['receipt']['id'] = 'foreign'
+                elif mismatch == 'result': data['receipt']['result'] = {'success': True, 'data': {'result': 'foreign'}}
+                elif mismatch == 'hash': data['receipt']['sha256'] = ''
+                elif mismatch == 'blocked': data['holder']['blocked'] = 'blocked'
+                elif mismatch == 'expired': data['holder']['deadline'] = time.time() - 1
+                elif mismatch in ('pending', 'unknown'): data['receipt']['state'] = mismatch
+                elif mismatch == 'changed_hash' and self.ack_attempts == 2: data['receipt']['sha256'] = 'changed'
+            return answer
+        self.authority.call = call
+
+    def check_no_replay(self):
+        self.assertEqual(1, sum(a == 'execute' and p['operation'].endswith('start-play')
+            for a, p in self.authority.calls))
+        self.assertLessEqual(self.ack_attempts, 2)
+
+    def test_complete_receipt_allows_one_supplemental_ack(self):
+        self.configure()
+        result = self.process(self.submit(queue_timeout_seconds=10))
+        self.assertTrue(result['verified_success'])
+        self.assertEqual(2, self.ack_attempts)
+        self.assertLessEqual(self.ack_timeouts[1], 10)
+        self.assertEqual(30, self.authority.client.timeout)
+        self.check_no_replay()
+
+    def test_already_acknowledged_requires_no_supplemental_ack(self):
+        self.configure('already_committed')
+        self.assertTrue(self.process(self.submit())['verified_success'])
+        self.assertEqual(1, self.ack_attempts)
+        self.check_no_replay()
+
+    def test_supplemental_response_lost_is_observed_not_repeated(self):
+        self.configure('supplemental_reply_lost')
+        self.assertTrue(self.process(self.submit())['verified_success'])
+        self.assertEqual(2, self.ack_attempts)
+        self.check_no_replay()
+
+    def test_late_original_wins_cas_is_observed(self):
+        self.configure('late_original')
+        self.assertTrue(self.process(self.submit())['verified_success'])
+        self.assertEqual(2, self.ack_attempts)
+        self.check_no_replay()
+
+    def test_second_uncertain_complete_quarantines_without_third_ack(self):
+        self.configure('still_complete')
+        self.assertEqual('quarantined', self.process(self.submit())['state'])
+        self.assertEqual(2, self.ack_attempts)
+        self.assertTrue(self.authority.owned and self.authority.playing)
+        self.check_no_replay()
+
+    def test_changed_hash_after_supplemental_ack_quarantines(self):
+        self.configure(mismatch='changed_hash')
+        self.assertEqual('quarantined', self.process(self.submit())['state'])
+        self.assertEqual(2, self.ack_attempts)
+        self.check_no_replay()
+
+    def test_mismatched_proof_never_sends_supplemental_ack(self):
+        for mismatch in ('owner', 'ticket', 'pid', 'operation', 'result', 'hash', 'blocked', 'expired', 'pending', 'unknown'):
+            with self.subTest(mismatch=mismatch):
+                # Each subtest needs a fresh ledger and submission identity.
+                case = AckReconciliationTests('test_complete_receipt_allows_one_supplemental_ack')
+                case.setUp()
+                try:
+                    case.configure(mismatch=mismatch)
+                    self.assertEqual('quarantined', case.process(case.submit())['state'])
+                    self.assertEqual(1, case.ack_attempts)
+                    case.check_no_replay()
+                finally:
+                    case.tearDown(); case.doCleanups()
+
+
+    def test_status_response_after_fixed_deadline_cannot_ack(self):
+        job = self.submit()
+        self.store.update(job, ticket=1, token='test-secret')
+        self.authority.peer = False
+        self.authority.owned = True
+        self.authority.owner = 'coordinator-' + job
+        self.authority.token = 'test-secret'
+        result = {'success': True, 'data': {'result': 'ok'}}
+        self.authority.receipt = {'id': job + '-start-play', 'state': 'complete',
+                                  'sha256': 'own-hash', 'result': result}
+        worker = PhaseWorker(self.store, self.root, factory=lambda: self.authority, timeout=.01, interval=.001)
+        worker.client = self.authority
+        worker.claim_initial = {'editor': {'pid': 777}}
+        original = self.authority.call
+        budgets = []
+        def slow_status(action, **p):
+            if action == 'status':
+                budgets.append(self.authority.client.timeout)
+                time.sleep(.02)
+            return original(action, **p)
+        self.authority.call = slow_status
+        with self.assertRaisesRegex(phase.Uncertain, 'deadline'):
+            worker.reconcile_ack(job, job + '-start-play', result)
+        self.assertEqual(1, len(budgets))
+        self.assertLessEqual(budgets[0], .01)
+        self.assertEqual(30, self.authority.client.timeout)
+        self.assertFalse(any(a == 'ack' for a, p in self.authority.calls))

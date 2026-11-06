@@ -1,0 +1,153 @@
+{
+  "database_sha256": "b01e5274007c4f5931f7fc7666fadf72cb84def1a85e1a3157d8676547eaa3b7",
+  "job_states": {
+    "failed": 6,
+    "succeeded": 45
+  },
+  "event_counts": {
+    "terminal_receipt_recovered": 1,
+    "status_unavailable": 9,
+    "import_confirmation_unavailable": 8,
+    "import_confirmation_wait_reconnect": 8,
+    "import_cleanup_recovered": 0,
+    "cleanup_recovered": 0,
+    "unmarked_cleanup_recovered": 0,
+    "transport_error": 0
+  },
+  "terminal_receipt_recovery": [
+    {
+      "label": "preflight",
+      "execute_intent_to_timeout_response_seconds": 30.048888,
+      "timeout_response_to_recovered_receipt_seconds": 43.08209,
+      "initial_readiness_armed_to_recovered_receipt_seconds": 74.675529,
+      "execute_intent_to_recovered_receipt_seconds": 73.130978,
+      "unavailable_status_events": 9,
+      "matching_execute_intents": 1
+    }
+  ],
+  "import_reconfirmation": [
+    {
+      "sample": 1,
+      "version": "checked-import-notification-v3-reconnect-confirmation",
+      "unavailable_to_confirmed_seconds": 2.643377,
+      "unavailable_to_next_confirmation_intent_seconds": 0.675848,
+      "armed_to_confirmed_seconds": 56.894131,
+      "confirmation_intents": 2,
+      "status_rpc_count": 2,
+      "notified_session_changed": [
+        false,
+        true
+      ],
+      "import_mutation_intents": 1
+    },
+    {
+      "sample": 2,
+      "version": "checked-import-notification-v3-reconnect-confirmation",
+      "unavailable_to_confirmed_seconds": 2.664039,
+      "unavailable_to_next_confirmation_intent_seconds": 0.730688,
+      "armed_to_confirmed_seconds": 28.153016,
+      "confirmation_intents": 2,
+      "status_rpc_count": 2,
+      "notified_session_changed": [
+        false,
+        true
+      ],
+      "import_mutation_intents": 1
+    },
+    {
+      "sample": 3,
+      "version": "checked-import-notification-v3-reconnect-confirmation",
+      "unavailable_to_confirmed_seconds": 2.69962,
+      "unavailable_to_next_confirmation_intent_seconds": 0.74689,
+      "armed_to_confirmed_seconds": 29.506034,
+      "confirmation_intents": 2,
+      "status_rpc_count": 2,
+      "notified_session_changed": [
+        false,
+        true
+      ],
+      "import_mutation_intents": 1
+    },
+    {
+      "sample": 4,
+      "version": "checked-import-notification-v3-reconnect-confirmation",
+      "unavailable_to_confirmed_seconds": 1.841387,
+      "unavailable_to_next_confirmation_intent_seconds": 0.435718,
+      "armed_to_confirmed_seconds": 18.359565,
+      "confirmation_intents": 2,
+      "status_rpc_count": 2,
+      "notified_session_changed": [
+        false,
+        true
+      ],
+      "import_mutation_intents": 1
+    },
+    {
+      "sample": 5,
+      "version": "checked-import-notification-v3-reconnect-confirmation",
+      "unavailable_to_confirmed_seconds": 1.574947,
+      "unavailable_to_next_confirmation_intent_seconds": 0.389691,
+      "armed_to_confirmed_seconds": 18.579414,
+      "confirmation_intents": 2,
+      "status_rpc_count": 2,
+      "notified_session_changed": [
+        false,
+        true
+      ],
+      "import_mutation_intents": 1
+    },
+    {
+      "sample": 6,
+      "version": "checked-import-notification-v3-reconnect-confirmation",
+      "unavailable_to_confirmed_seconds": 1.796879,
+      "unavailable_to_next_confirmation_intent_seconds": 0.498385,
+      "armed_to_confirmed_seconds": 18.518611,
+      "confirmation_intents": 2,
+      "status_rpc_count": 2,
+      "notified_session_changed": [
+        false,
+        true
+      ],
+      "import_mutation_intents": 1
+    },
+    {
+      "sample": 7,
+      "version": "checked-import-notification-v3-reconnect-confirmation",
+      "unavailable_to_confirmed_seconds": 2.836962,
+      "unavailable_to_next_confirmation_intent_seconds": 0.784867,
+      "armed_to_confirmed_seconds": 23.90614,
+      "confirmation_intents": 2,
+      "status_rpc_count": 2,
+      "notified_session_changed": [
+        false,
+        true
+      ],
+      "import_mutation_intents": 1
+    },
+    {
+      "sample": 8,
+      "version": "checked-import-notification-v3-reconnect-confirmation",
+      "unavailable_to_confirmed_seconds": 2.819005,
+      "unavailable_to_next_confirmation_intent_seconds": 0.765309,
+      "armed_to_confirmed_seconds": 25.290569,
+      "confirmation_intents": 2,
+      "status_rpc_count": 2,
+      "notified_session_changed": [
+        false,
+        true
+      ],
+      "import_mutation_intents": 1
+    }
+  ],
+  "import_unavailable_to_confirmed_summary_seconds": {
+    "n": 8,
+    "minimum": 1.574947,
+    "median": 2.653708,
+    "maximum": 2.836962
+  },
+  "limitations": [
+    "Historical run used v3; checkout initially used v2 and was subsequently ported byte-for-byte to historical v3. Timings remain historical, not new-install measurements.",
+    "Event brackets include transport and scheduling; not pure recovery overhead or guaranteed deadlines.",
+    "No cleanup-recovered events in this ledger: late-Stop/import/unmarked cleanup coverage is offline only in this audit."
+  ]
+}

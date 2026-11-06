@@ -1,5 +1,15 @@
 # Export validation and known limits
 
+## Scoped recovery qualification
+
+The current candidate passed 109 focused phase/import/recovery tests and eight installer tests. The first isolated Unity build exposed an invalid 33-character `WorkflowPlay.cs.meta` GUID: Unity exited successfully while ignoring that script. The GUID is corrected to 32 characters, installer regression coverage checks script GUIDs, and a later live registration and owned Play prove the actual tool loaded.
+
+An initial batch Editor attempt was rejected by the existing process-identity guard before requesting a ticket. The operator switched to a normal Editor; the guard was not changed. A basic check then passed. The first Preview exposed a lost start-Play ACK and was quarantined. Evidence was preserved before operator cleanup and the existing resolution route marked it abandoned, never successful.
+
+The bounded ACK fix permits one supplemental receipt acknowledgement only after matching authenticated complete evidence, then requires observed acknowledged state. The next accepted Preview encountered the same natural ACK-disconnect path, recovered in 10.371 seconds from the failed ACK response, passed its in-Play completion check, stopped its owned Play, restored the scene and released the gate. It issued one start and one stop. A separate real C# write/import/domain reload passed with one write and one import; it did not exercise unavailable import confirmation.
+
+This is a scoped qualification on one machine, not a speed/token comparison, clean-machine certification or proof of every recovery route. See [recovery details](recovery.md) and [sanitized evidence](recovery-live-validation.json). Services were started explicitly; automatic C# fallback startup remains separately scoped by its boundary tests.
+
 ## Workflow startup interpreter fix
 
 The exported Unity ingress selected `C:/Python313/python.exe` when the workflow endpoint was unavailable, although the installer creates `.unity-mcp-queue/venv/Scripts/python.exe`. A standalone .NET 8 harness compiles the actual ingress source and invokes its real `Workflow` method, replacing only HTTP/process launch boundaries and Unity/package API surfaces. The pre-fix `offline` case deterministically failed twice with `expected installer venv, got C:/Python313/python.exe`; the already-online and wrong-workspace controls passed. The installed fixture had both the expected interpreter and server, ruling out incomplete installation as the explanation for the wrong selection. The missing-interpreter/server cases also showed attempted launches before the fix.
@@ -49,8 +59,8 @@ Export digests in `source-manifest.json` normalize text line endings to LF so a 
 
 ## What is not validated
 
-- No new live Unity, import, domain reload, scene, Play or visual acceptance was performed for this checkout.
-- Fresh network Python installation now passes in the installer fixture described above. Clean-machine Unity installation and live acceptance remain unqualified.
+- The initial export had no live Unity acceptance. The scoped recovery qualification above now covers its listed cases; broad visual/asset and multi-agent performance acceptance remains unfinished.
+- Fresh network Python installation passes in the installer fixture described above. Clean-machine Unity installation remains unqualified.
 - Offline fake-authority/temporary-ledger tests do not prove live Editor behavior.
 - Historical 24-success/1-abandoned job outcomes do not certify all content or unattended recovery.
 - Complete cross-layer network retry totals and causal call-reduction/speed claims remain unestablished.
